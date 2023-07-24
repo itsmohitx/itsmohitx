@@ -1,8 +1,7 @@
 # Heylo there :)
 
-👋 I'm Mohit, a Blockchain & Web3 Enthusiast! 🚀
-
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.peakpx.com%2Fen%2Fhd-wallpaper-desktop-ocfjr&psig=AOvVaw1kNsLB5xpg8bHKwZWZgURz&ust=1690282678535000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNj64-aXp4ADFQAAAAAdAAAAABAF
+# 👋 I'm Mohit, a Blockchain & Web3 Enthusiast! 🌻
+![Aesthetic Hello](https://i.imgur.com/1vW0mdu.png)
 
 ![Location](https://img.shields.io/badge/Living%20in-India-orange)
 
