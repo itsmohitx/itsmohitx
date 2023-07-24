@@ -1,6 +1,12 @@
-# Hey there! 👋 I'm Mohit, a Blockchain & Web3 Enthusiast from India! 📍
+# Heylo there :)
 
-## 🌐 Let's Ride the Blockchain Wave Together! 🚀
+👋 I'm Mohit, a Blockchain & Web3 Enthusiast! 🚀
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.peakpx.com%2Fen%2Fhd-wallpaper-desktop-ocfjr&psig=AOvVaw1kNsLB5xpg8bHKwZWZgURz&ust=1690282678535000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNj64-aXp4ADFQAAAAAdAAAAABAF
+
+![Location](https://img.shields.io/badge/Living%20in-India-orange)
+
+## 🔮 Let's Ride the Blockchain Wave Together! 🚀
 
 Blockchain & Web3 are my jams! I foster Web 3.0 communities, host epic events, and spread awareness! 💻 Multitasker, content creator, tech geek! 💡
 
@@ -8,7 +14,7 @@ Blockchain & Web3 are my jams! I foster Web 3.0 communities, host epic events, a
 
 🔍 Dive deep into Web 3.0 communities, host cool events, and create buzz about the future! 🌐
 
-📚 My interests: Blockchain, Product Designing, Creative product management. I'm a blockchain explorer! 💎
+🔭 My interests: Blockchain, Product Designing, Creative product management. I'm a blockchain explorer! 💎
 
 📅 Let's chat! Schedule a meet with me at [Calendly](https://calendly.com/mohitx/30min). For general mails, hit me at mohitx.work@gmail.com!
 
@@ -18,11 +24,11 @@ Blockchain & Web3 are my jams! I foster Web 3.0 communities, host epic events, a
 
 💪 Active contributor to [Shardeum](https://github.com/shardeum/), onboarding devs and building the dev ecosystem!
 
-🚀 Tech Lead at 5ire Hub by [5ire-org](https://github.com/5ire-org), leading with code!
+🚀 Previously Tech Lead at 5ire Hub by [5ire-org](https://github.com/5ire-org), leading with code!
 
-🌟 Chapter lead for [CoinDCX](https://github.com/coindcx-official), spreading the crypto love!
+🌟 Worked as Chapter lead for [CoinDCX](https://github.com/coindcx-official), spreading the crypto love!
 
-🛠️ Contributed to [Vega Protocol](https://github.com/vegaprotocol), building the future of finance!
+🛠️ Previously Contributed to [Vega Protocol](https://github.com/vegaprotocol), building the future of finance!
 
 🚀 Founder and Lead for [Google Developer Students Club - CDGI](https://github.com/google), Building with the next-gen devs!
 
