@@ -1,9 +1,7 @@
 # Heylo there :)
 
 # 👋 I'm Mohit, a Blockchain & Web3 Enthusiast! 🌻
-![Aesthetic Hello](https://i.imgur.com/1vW0mdu.png)
-
-![Location](https://img.shields.io/badge/Living%20in-India-orange)
+![Aesthetic Hello] (https://imgur.com/gallery/0YSeB)
 
 ## 🔮 Let's Ride the Blockchain Wave Together! 🚀
 
@@ -11,11 +9,11 @@ Blockchain & Web3 are my jams! I foster Web 3.0 communities, host epic events, a
 
 ### What I Do:
 
-🔍 Dive deep into Web 3.0 communities, host cool events, and create buzz about the future! 🌐
+🔍 Dive deep into Web 3.0 communities, host cool events, and create buzz about the future! 🌈
 
-🔭 My interests: Blockchain, Product Designing, Creative product management. I'm a blockchain explorer! 💎
+🔭 My interests: Blockchain, Product Designing, Creative product management. I'm a blockchain explorer! 🎒
 
-📅 Let's chat! Schedule a meet with me at [Calendly](https://calendly.com/mohitx/30min). For general mails, hit me at mohitx.work@gmail.com!
+⏳ Let's chat! Schedule a meet with me at [Calendly](https://calendly.com/mohitx/30min). For general mails, hit me at mohitx.work@gmail.com!
 
 ### Professional Work Experience:
 
@@ -40,6 +38,7 @@ Blockchain & Web3 are my jams! I foster Web 3.0 communities, host epic events, a
 ### 🔐 My Mission:
 
 To make crypto and blockchain tech super accessible for everyone! Join me on this exciting journey! 🌊
+![Location](https://img.shields.io/badge/Living%20in-India-orange)
 
 ### Let's Connect:
 
