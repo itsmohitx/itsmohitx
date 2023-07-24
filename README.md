@@ -1,7 +1,6 @@
 # Heylo there :)
 
 # 👋 I'm Mohit, a Blockchain & Web3 Enthusiast! 🌻
-![Aesthetic Hello](https://i.imgur.com/0YSeB.jpg)
 
 ## 🔮 Let's Ride the Blockchain Wave Together! 🚀
 
