@@ -18,9 +18,9 @@ Blockchain & Web3 are my jams! I foster Web 3.0 communities, host epic events, a
 
 💼 Blockchain Operation Lead at [Quillhash](https://github.com/Quillhash), cooking up campaigns and growth strategies!
 
-💪 Active contributor to [Shardeum](https://github.com/shardeum/), onboarding devs and building the dev ecosystem!
+💪 Active contributor to zzzz.com, onboarding devs and building the dev ecosystem!
 
-🚀 Previously Tech Lead at 5ire Hub by [5ire-org](https://github.com/5ire-org), leading with code!
+🚀 Previously Tech Lead at ZZZZ.com, leading with code!
 
 🌟 Worked as Chapter lead for [CoinDCX](https://github.com/coindcx-official), spreading the crypto love!
 
