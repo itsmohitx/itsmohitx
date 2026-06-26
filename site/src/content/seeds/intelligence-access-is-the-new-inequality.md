@@ -1,0 +1,19 @@
+---
+title: "Intelligence Access Is the New Inequality"
+type: seed
+links_to: "The Two-Tier Future"
+---
+
+# Intelligence Access Is the New Inequality
+
+Picture 2035. A small group has access to frontier intelligence, models that are effectively a hundred times more capable, and they use them to think, build, and decide. Everyone else gets the commodity model. The cheap one. Helpful enough to be sticky, weak enough to keep them dependent.
+
+Stack those gaps and the distance in raw intelligence access between the top and the bottom could run into the thousands-fold. That is not a small advantage. That is a different species of decision-making, available to whoever can pay for the good tier.
+
+Here is what makes it dangerous. It is invisible. Both groups are technically "using AI." Both have an assistant in their pocket. The surface looks equal, even democratic, while underneath the most important resource of the century quietly sorts people into two tiers. Old inequality you could see. You could point at the mansion and the slum. This one hides inside a phone that everyone owns.
+
+Money was the last great divide. Intelligence access is the next one, and it compounds faster, because the people with the better model use it to get further ahead, then use that lead to afford an even better model. The gap does not stay still. It widens on its own.
+
+The fix is not a ban and it is not slowing the frontier. It is putting a real floor under everyone else, treating access to good intelligence as something we build on purpose rather than a privilege we let the market sort.
+
+The full argument is in The Two-Tier Future.

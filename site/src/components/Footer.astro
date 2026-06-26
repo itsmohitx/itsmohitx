@@ -1,0 +1,20 @@
+---
+import { site, withBase } from "../lib/site";
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href={withBase("/")} class="nav-brand">{site.name}</a>
+      <p class="meta" style="margin: 0.45rem 0 0; max-width: 24rem;">
+        Optimist about the technology. Skeptic about who ends up holding it.
+      </p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: center;">
+      <a href={site.x.href} target="_blank" rel="me noopener noreferrer">X {site.x.handle}</a>
+      <span class="disabled" aria-disabled="true" title="A separate project, launching soon">
+        The e/acc Index (coming soon)
+      </span>
+    </div>
+  </div>
+</footer>

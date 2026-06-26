@@ -1,0 +1,62 @@
+---
+title: The Optimist's Bet
+type: essay
+---
+
+# The Optimist's Bet
+
+People treat optimism as a personality. The cheerful person at the table, the one who waves off the hard questions. That is not what I mean by it, and that version is useless.
+
+Optimism is not a mood. It is a set of specific bets about what gets dramatically better, and when, and on what condition. A real optimist can tell you exactly what he is betting on and exactly what would prove him wrong. Vague hope is not optimism. It is decoration. Here are my actual bets, each one concrete enough to be argued with.
+
+## The first gift is invisible: bigger ambition
+
+Everyone measures AI by productivity. How much faster the work gets, how many tasks it absorbs. That is real, and it is the least interesting thing about it.
+
+The first and biggest gift of AI is something almost no one names. It makes human ambition bigger. When the cost of building collapses, the ceiling on what people let themselves want lifts with it.
+
+Watch what actually happens when building gets cheap. A person who would have opened a small shop now reaches for a hard problem, because the hard problem is suddenly in range. The thing that used to need a team of twenty and two years of runway now needs one motivated person and a weekend. And once people see that the expensive thing is now cheap, they stop censoring their own ambition. They let themselves want the larger thing.
+
+This is the upstream cause of everything else on this list. Most human potential is never lost to lack of talent. It is lost to a quiet calculation that the big thing is not worth attempting, because the cost of trying is too high. Collapse that cost and you release a flood of attempts that would never have happened. Multiply one unlocked ambition by a billion people and that is the real compounding event of this decade. Not faster work. A species that finally aims higher because it can.
+
+The condition is the same as every bet here. This only works if we point the new ambition at problems worth solving, and not at one more feed engineered to hold a human eye. The tool lifts the ceiling. We still choose the room.
+
+## A germ-theory moment for disease
+
+Here is my boldest bet and the one I am most confident in. The next fifteen to twenty years hold a shift on the scale of germ theory.
+
+Remember what germ theory actually did. It did not make a sickness more survivable. It removed whole categories of death from human life permanently. Entire kinds of suffering that defined every previous century simply stopped being part of the human story. I think we are standing at the front edge of a moment that size, and most people are sleeping through it because it arrives as scattered headlines instead of one announcement.
+
+Look at what is already on the board in 2026. Personalized cancer vaccines, a strand of mRNA built from the genetic fingerprint of a person's own tumor, held a meaningful drop in melanoma recurrence five years out in the Merck and Moderna data, with the late-stage trial fully enrolled. Brain-computer interfaces crossed from demo into medicine, with the first implantable devices moving through pivotal trials toward approval and restoring movement and speech to people who had lost them. These are not isolated wins. They are the early readings of a body that has become engineerable.
+
+Make this the priority instead of the side effect, and a child born in 2045 grows up in a world where things that defined human suffering for all of history simply do not exist for her. She will hear about them the way we hear about smallpox. Not a disease you fight, a disease that ended. That world is reachable. It is not automatic. It happens only if we aim our best people and our best capital at it on purpose, instead of at the next attention machine.
+
+## Biology becoming a programming language
+
+Underneath the medical bet is a deeper one, and it is the engine that makes the rest go faster than people expect. Biology is turning into a programming language.
+
+For all of history the body was a black box. You could observe it, poke it, hope. You could not open it and edit. That is changing now, fast. DNA and RNA are starting to behave like editable code rather than fixed inheritance. We are learning to read the body's source and, increasingly, to write it.
+
+The signs are concrete. In early 2026 an AI model autonomously designed and ran thirty-six thousand biological experiments through a robotic lab and brought down the cost of producing a target protein. Foundation models now train on trillions of DNA base pairs the way language models trained on text, learning the grammar of life well enough to generate working sequences from scratch. When biology becomes something you can write, the pace of medicine stops being limited by trial and error in a wet lab and starts moving at the speed of code. That is the multiplier under the germ-theory bet. It is why I think the timeline is shorter than the cautious estimates, if we choose to fund it.
+
+## Real abundance, widely shared
+
+The last bet matters most for ordinary people, and it is the one that gets the least airtime because it does not sound like science fiction. It is not flying cars or a colony on Mars. It is that the life of a comfortable middle-class family becomes available to most of the planet.
+
+Picture what that family actually has. Enough energy to never think about it. Enough food. Healthcare that works. Education for the kids, a home that is theirs, the slack to plan rather than just survive. For most of human history almost no one had that, and today a minority of the planet does. My bet is that this becomes the floor, not the ceiling.
+
+The pieces are arriving at once. Energy is collapsing in price, with solar now the cheapest electricity in history by the IEA's own account, down to a few cents a kilowatt-hour in sunny regions and still falling. Intelligence is collapsing in price, with the cost of a unit of frontier AI down roughly a thousandfold in three years. Production is automating. Cheap energy, cheap intelligence, cheap production, layered together, is exactly the recipe for clearing the basic needs of a human life and doing it at a price the whole world can reach. When the bottom of the pyramid gets cheap enough, the floor rises for everyone standing on it.
+
+This is the version of the future actually worth fighting for. Not abundance for the few who already have it, but the comfortable life of the global middle class extended to the billions who have never had it. It is reachable. And like everything else here, it is reachable only if we aim at it on purpose, because the same cheap tools can just as easily be pointed at concentration instead of distribution.
+
+## The condition that runs through all of it
+
+Notice the phrase that appears under every bet. If we prioritize it. That is not a hedge. It is the whole argument.
+
+None of this is automatic. The same intelligence that could end disease can be spent maximizing time-on-screen. The same cheap energy that could lift a billion families can be hoarded behind a few balance sheets. The same programmable biology that could rewrite aging for everyone can be sold first and only to the people who can pay. Every one of these bets has a bright outcome and a dark one, and the tool does not choose between them. We do.
+
+That is why I am an optimist who refuses to shut up about the risk. The two are not in tension. The pessimist says the future happens to us, so brace for it. The naive optimist says the future is bright, so relax. Both are wrong, and both lead to the same passivity. The future is not a thing that arrives. It is a thing we aim, with our talent and our capital and our attention, every single year.
+
+So these are my bets. Ambition gets bigger. Disease gets a germ-theory moment. Biology becomes code. Abundance gets shared. None of them are promises. All of them are reachable. And the only variable that decides which version we get is whether we choose to point ourselves at the bright one on purpose.
+
+I am betting we aim high. That is the entire content of my optimism, and I would rather be wrong having aimed there than right having expected nothing.

@@ -1,0 +1,136 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import { site, readingTime, teaser, withBase, essayMeta } from "../lib/site";
+
+const allEssays = (await getCollection("essays")).sort(
+  (a, b) => essayMeta(a.slug).order - essayMeta(b.slug).order
+);
+const featured = allEssays.find((e) => essayMeta(e.slug).featured);
+const listed = allEssays.filter((e) => !essayMeta(e.slug).featured);
+const seeds = (await getCollection("seeds")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
+);
+---
+
+<Base>
+  <!-- Hero -->
+  <section class="wrap" style="padding: 4rem 1.25rem 2.5rem;">
+    <h1
+      class="prose"
+      style="font-size: clamp(2.1rem, 1.5rem + 3vw, 3.4rem); font-weight: 620; line-height: 1.08; letter-spacing: -0.02em; max-width: 22ch;"
+    >
+      {site.tagline}
+    </h1>
+    <p class="lede" style="margin-top: 1.5rem; max-width: 38rem;">
+      {site.description}
+    </p>
+    {
+      featured && (
+        <div style="margin-top: 2rem;">
+          <a href={withBase(`/essays/${featured.slug}`)} class="btn btn-primary">
+            Start with An Optimist's Note →
+          </a>
+        </div>
+      )
+    }
+  </section>
+
+  <!-- Featured: the tone-setter -->
+  {
+    featured && (
+      <section class="wrap" style="padding-bottom: 1rem;">
+        <a href={withBase(`/essays/${featured.slug}`)} class="card">
+          <span class="eyebrow" style="color: var(--amber);">Read this first</span>
+          <span
+            class="sans"
+            style="display: block; margin-top: 0.5rem; font-family: var(--font-serif); font-size: 1.6rem; color: var(--ink); letter-spacing: -0.01em;"
+          >
+            {featured.data.title}
+          </span>
+          <span style="display: block; margin-top: 0.6rem; color: var(--muted);">
+            {teaser(featured.body, 220)}
+          </span>
+        </a>
+      </section>
+    )
+  }
+
+  <!-- The essays -->
+  <section id="essays" class="wrap" style="padding-top: 3rem; scroll-margin-top: 5rem;">
+    <p class="eyebrow">The essays</p>
+    <h2 class="prose" style="font-size: 1.7rem; margin: 0.5rem 0 1.75rem;">
+      Where frontier technology is taking us, and who it leaves behind.
+    </h2>
+    <ul style="list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line);">
+      {
+        listed.map((e) => {
+          const meta = essayMeta(e.slug);
+          return (
+            <li style="border-bottom: 1px solid var(--line);">
+              <a
+                href={withBase(`/essays/${e.slug}`)}
+                style="display: block; padding: 1.5rem 0; text-decoration: none; color: inherit;"
+              >
+                <span
+                  style="display: block; font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.2; color: var(--ink); letter-spacing: -0.01em;"
+                >
+                  {e.data.title}
+                </span>
+                <span class="meta" style="display: block; margin-top: 0.5rem;">
+                  {meta.kind === "pillar" ? "Essay" : "Note"} · {readingTime(e.body)} min read
+                </span>
+                <span style="display: block; margin-top: 0.6rem; color: var(--muted); max-width: 46rem;">
+                  {teaser(e.body, 190)}
+                </span>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+
+  <!-- Seeds: the doorways -->
+  <section class="wrap" style="padding-top: 3.5rem;">
+    <p class="eyebrow">Seeds</p>
+    <h2 class="prose" style="font-size: 1.7rem; margin: 0.5rem 0 0.5rem;">
+      Short hooks
+    </h2>
+    <p style="color: var(--muted); margin: 0 0 1.5rem; max-width: 40rem;">
+      A quick way in. Each one is a single idea that opens into one of the essays above.
+    </p>
+    <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 0.75rem;">
+      {
+        seeds.map((s) => (
+          <li>
+            <a href={withBase(`/seeds/${s.slug}`)} class="card" style="padding: 1.1rem 1.25rem;">
+              <span
+                class="sans"
+                style="display: block; font-family: var(--font-serif); font-size: 1.2rem; color: var(--ink);"
+              >
+                {s.data.title}
+              </span>
+              <span class="meta" style="display: block; margin-top: 0.35rem;">
+                Leads to {s.data.links_to}
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <!-- About strip -->
+  <section class="wrap" style="padding-top: 3.5rem;">
+    <div class="card">
+      <p style="margin: 0; color: var(--muted); max-width: 44rem;">
+        I write and think about frontier technology, mostly AI, space, and biology, and the
+        economics that decide who they actually serve. This site is a garden, not a resume.
+      </p>
+      <a href={withBase("/about")} class="sans" style="display: inline-block; margin-top: 0.75rem; color: var(--amber); text-decoration: none;">
+        More about me →
+      </a>
+    </div>
+  </section>
+</Base>

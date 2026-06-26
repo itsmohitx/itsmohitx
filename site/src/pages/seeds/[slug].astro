@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { teaser, withBase } from "../../lib/site";
+
+export async function getStaticPaths() {
+  const seeds = await getCollection("seeds");
+  return seeds.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// The funnel: every seed points to a pillar by title.
+const pillar = (await getCollection("essays")).find((e) => e.data.title === entry.data.links_to);
+---
+
+<Base title={entry.data.title} description={teaser(entry.body)}>
+  <div class="wrap" style="padding-top: 2.5rem;">
+    <a href={withBase("/")} class="meta" style="text-decoration: none;">← All essays</a>
+
+    <p class="eyebrow" style="margin-top: 1.6rem;">Seed</p>
+
+    <article class="prose" style="margin-top: 0.9rem;">
+      <Content />
+    </article>
+
+    {
+      pillar && (
+        <a
+          href={withBase(`/essays/${pillar.slug}`)}
+          class="card"
+          style="margin-top: 2.5rem; display: block;"
+        >
+          <span class="eyebrow" style="color: var(--amber);">Read the pillar</span>
+          <span class="sans" style="display: block; margin-top: 0.45rem; font-family: var(--font-serif); font-size: 1.4rem; color: var(--ink);">
+            {pillar.data.title} →
+          </span>
+        </a>
+      )
+    }
+  </div>
+</Base>
