@@ -9,7 +9,7 @@ export default function NotFound() {
         This thought doesn&apos;t exist yet.
       </h1>
       <p className="mt-5 max-w-md font-serif text-lg font-light leading-relaxed text-muted">
-        The page you&apos;re looking for isn&apos;t here — but the mind is large, and
+        The page you&apos;re looking for isn&apos;t here, but the mind is large, and
         you&apos;re one click from anywhere in it.
       </p>
 

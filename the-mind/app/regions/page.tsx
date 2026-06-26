@@ -6,7 +6,7 @@ import { PageNav } from "@/components/site/PageNav";
 
 export const metadata: Metadata = {
   title: "Regions",
-  description: "The six regions of a single worldview — the real territory of how Mohit thinks.",
+  description: "The five regions of a single worldview, the real territory of how Mohit Jain thinks.",
 };
 
 export default function RegionsIndex() {
@@ -20,7 +20,7 @@ export default function RegionsIndex() {
           Regions
         </h1>
         <p className="mt-5 font-serif text-xl font-light leading-relaxed text-muted">
-          Six regions of a single worldview. Each is a domain of how I think; the
+          Five regions of a single worldview. Each is a domain of how I think; the
           edges between them are where the real thinking lives.
         </p>
       </header>

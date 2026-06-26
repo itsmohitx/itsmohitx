@@ -105,7 +105,7 @@ export function TopNav() {
 }
 
 function MindMark() {
-  // A small, quiet mark: concentric warm arcs — a mind, not a brain clipart.
+  // A small, quiet mark: concentric warm arcs - a mind, not a brain clipart.
   return (
     <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5 text-amber">
       <circle cx="12" cy="12" r="2.4" fill="currentColor" />

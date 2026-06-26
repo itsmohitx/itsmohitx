@@ -1,4 +1,4 @@
-# Mohit Jain — essays
+# Mohit Jain - essays
 
 A clean, fast, text-first essay site. Not a blog, not a portfolio. The ideas are the
 product, in the register of paulgraham.com or stephango.com with a warm, literary feel.
@@ -8,11 +8,11 @@ Warm Ink palette, dark by default with a light toggle. The writing is the design
 
 ## Structure
 
-- **Home** (`/`) — hero, "An Optimist's Note" featured first, the essays as the
+- **Home** (`/`) - hero, "An Optimist's Note" featured first, the essays as the
   centerpiece, the seeds as quick doorways.
-- **Essays** (`/essays/[slug]`) — the long pillars plus two short pieces. Each pillar
+- **Essays** (`/essays/[slug]`) - the long pillars plus two short pieces. Each pillar
   lists the seeds that open into it.
-- **Seeds** (`/seeds/[slug]`) — short hooks. Each ends with a clear link to its pillar
+- **Seeds** (`/seeds/[slug]`) - short hooks. Each ends with a clear link to its pillar
   (the `links_to` field in its frontmatter).
 - **About** (`/about`).
 - Real URLs everywhere, so browser back, refresh, and link sharing all work.
@@ -21,8 +21,8 @@ Warm Ink palette, dark by default with a light toggle. The writing is the design
 
 All writing lives in `src/content/` as Markdown:
 
-- `src/content/essays/*.md` — frontmatter: `title`, `type`.
-- `src/content/seeds/*.md` — frontmatter: `title`, `type`, `links_to` (the exact title
+- `src/content/essays/*.md` - frontmatter: `title`, `type`.
+- `src/content/seeds/*.md` - frontmatter: `title`, `type`, `links_to` (the exact title
   of the pillar it points to).
 
 Order, "featured", and pillar-vs-note are set in `src/lib/site.ts` (`ESSAY_META`) so the

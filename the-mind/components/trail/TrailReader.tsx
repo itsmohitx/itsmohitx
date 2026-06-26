@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 /**
- * Trail reading — the signature interaction (Matuschak stacked panes).
+ * Trail reading - the signature interaction (Matuschak stacked panes).
  *
  * Clicking a :trail link opens the target in a pane *beside* the current one;
  * earlier panes collapse to labelled vertical spines, so the reader sees the trail
@@ -13,11 +13,14 @@ import Link from "next/link";
  * exact trail.
  *
  * Progressive enhancement: this only activates on wide screens. On mobile (or with
- * no JS) the same :trail links are ordinary <a href="/writing/slug"> — they just
+ * no JS) the same :trail links are ordinary <a href="/writing/slug"> - they just
  * navigate. Navigation is never sacrificed for the flourish.
  */
 
 const SPINE_REM = 2.75;
+// Prepended to fragment fetches so the trail reader works under a base path
+// (e.g. a GitHub Pages project site at /itsmohitx).
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 interface PaneData {
   slug: string;
@@ -75,7 +78,7 @@ export function TrailReader({
       if (knownRef.current[slug] !== undefined) return;
       knownRef.current[slug] = "loading";
       setCache((prev) => ({ ...prev, [slug]: "loading" }));
-      fetch(`/writing/${slug}/fragment`)
+      fetch(`${BASE_PATH}/writing/${slug}/fragment`)
         .then(async (res) => (res.ok ? ((await res.json()) as PaneData) : null))
         .then((val) => {
           knownRef.current[slug] = val;
@@ -153,7 +156,7 @@ export function TrailReader({
         className={trailMode ? "trail-scroller" : ""}
         aria-label={trailMode ? "Reading trail" : undefined}
       >
-        {/* Pane 0 — the canonical essay. Same node in both modes (state preserved). */}
+        {/* Pane 0 - the canonical essay. Same node in both modes (state preserved). */}
         <section
           data-pane-index={0}
           className={trailMode ? "trail-pane" : ""}

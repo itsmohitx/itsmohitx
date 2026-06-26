@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { regions, getRegion, connectionsFor } from "@/content/regions";
 import { getEssaysByRegion } from "@/lib/essays";
+import { getSeedsByRegion } from "@/lib/seeds";
 import { PageNav } from "@/components/site/PageNav";
 
 export function generateStaticParams() {
@@ -30,6 +31,7 @@ export default async function RegionPage({
   if (!region) notFound();
 
   const essays = getEssaysByRegion(region.slug);
+  const seeds = getSeedsByRegion(region.slug);
   const links = connectionsFor(region.slug);
   const accentColor = region.accent === "amber" ? "rgb(var(--amber))" : "rgb(var(--oxblood))";
 
@@ -88,7 +90,31 @@ export default async function RegionPage({
         )}
       </section>
 
-      {/* Connections — the edges are content */}
+      {/* Entry notes (seeds) for this region */}
+      {seeds.length > 0 && (
+        <section className="mb-16">
+          <h2 className="eyebrow mb-5">Entry notes</h2>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {seeds.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/seeds/${s.slug}`}
+                  className="group block h-full rounded-2xl border border-line/12 bg-surface/40 p-5 transition-colors hover:border-amber/40 hover:bg-surface"
+                >
+                  <span className="font-serif text-lg leading-snug text-ink transition-colors group-hover:text-amber">
+                    {s.title}
+                  </span>
+                  <span className="mt-1.5 block font-mono text-[0.68rem] uppercase tracking-[0.12em] text-faint">
+                    {s.readingTime} min entry note
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Connections, the edges are content */}
       <section>
         <h2 className="eyebrow mb-5">How this connects</h2>
         <ul className="grid gap-4 sm:grid-cols-2">

@@ -12,7 +12,7 @@ function formatDate(iso: string): string {
 }
 
 /**
- * The sacred reading experience — one column, generous serif, sidenotes for depth.
+ * The sacred reading experience - one column, generous serif, sidenotes for depth.
  * Rendered on the server (SSR, SEO, fast). Used as the canonical essay body and,
  * verbatim, as pane 0 inside the trail reader.
  */

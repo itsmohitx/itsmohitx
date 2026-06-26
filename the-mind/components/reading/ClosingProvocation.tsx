@@ -3,7 +3,7 @@ import type { EssayMeta } from "@/lib/essays";
 
 /**
  * The one creative touch at the end of every essay: a sharp question that is a
- * provocation, not a graded quiz. It doesn't score the reader — it hands them
+ * provocation, not a graded quiz. It doesn't score the reader - it hands them
  * the next thought and links to the next essay. Reward = insight, not a checkmark.
  */
 export function ClosingProvocation({
@@ -17,7 +17,7 @@ export function ClosingProvocation({
 
   return (
     <aside className="mx-auto mt-20 max-w-measure">
-      <div className="mb-10 flex items-center gap-4 text-amber/60">
+      <div className="mb-10 flex items-center gap-4 text-amber/80">
         <span className="h-px flex-1 bg-line/20" />
         <span className="font-mono text-[0.7rem] uppercase tracking-[0.18em]">
           One more thought

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Warm Ink — the design system for "The Mind".
+ * Warm Ink - the design system for "The Mind".
  *
  * All colours are driven by CSS custom properties (channel triplets) defined in
  * app/globals.css and switched by [data-theme="light"]. That keeps a single token

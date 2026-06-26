@@ -2,7 +2,7 @@
   "name": "the-mind",
   "version": "0.1.0",
   "private": true,
-  "description": "The Mind — Mohit's writing-first personal site. A living map of how he thinks.",
+  "description": "The Mind. Mohit Jain's writing-first personal site, a living map of how he thinks.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

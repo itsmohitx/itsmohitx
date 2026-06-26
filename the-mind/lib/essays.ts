@@ -28,7 +28,7 @@ export interface EssayMeta {
   summary: string;
   date: string;
   readingTime: number;
-  /** The closing provocation — a question, not a quiz. */
+  /** The closing provocation - a question, not a quiz. */
   provocation: string;
   /** Explicit next essay; otherwise derived from the sequence. */
   next?: string;

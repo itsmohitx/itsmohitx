@@ -3,7 +3,7 @@ import { regions } from "@/content/regions";
 
 /**
  * The clean, beautiful, zero-flourish fallback for the regions map. This is what
- * mobile and no-JS visitors get — and it's a first-class way to navigate, not a
+ * mobile and no-JS visitors get - and it's a first-class way to navigate, not a
  * degraded one. Every region is a real link to its page.
  */
 export function RegionsList() {

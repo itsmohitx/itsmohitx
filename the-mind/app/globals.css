@@ -15,8 +15,8 @@
   --raised: 33 29 23; /* slightly lifted card */
   --ink: 241 236 227; /* #F1ECE3 warm paper-white */
   --muted: 156 148 136; /* #9C9488 */
-  --faint: 116 109 99; /* dimmer metadata */
-  --line: 255 248 238; /* hairline base — used at low alpha */
+  --faint: 142 134 122; /* dimmer metadata (>= 4.5:1 on bg for AA) */
+  --line: 255 248 238; /* hairline base - used at low alpha */
   --line-alpha: 0.1;
   --amber: 216 162 74; /* #D8A24A primary / links / active */
   --oxblood: 162 62 54; /* #A23E36 depth */
@@ -30,7 +30,7 @@
   --raised: 255 253 248;
   --ink: 26 23 20; /* #1A1714 */
   --muted: 107 98 88;
-  --faint: 138 128 116;
+  --faint: 111 104 92; /* darker metadata (>= 4.5:1 on paper for AA) */
   --line: 26 23 20;
   --line-alpha: 0.14;
   --amber: 176 121 33; /* slightly deeper amber for contrast on paper */
@@ -87,7 +87,7 @@
 }
 
 @layer components {
-  /* Skip link — keyboard users land here first. */
+  /* Skip link - keyboard users land here first. */
   .skip-link {
     position: fixed;
     top: 0.5rem;
@@ -189,7 +189,7 @@
     position: relative;
   }
   .reading ul > li::before {
-    content: "—";
+    content: "·";
     position: absolute;
     left: -1.4rem;
     color: rgb(var(--amber) / 0.8);
@@ -289,7 +289,7 @@
     }
   }
 
-  /* ── Trail links — open beside, on desktop ───────────────────────────── */
+  /* ── Trail links - open beside, on desktop ───────────────────────────── */
   .trail-link {
     color: rgb(var(--ink));
     text-decoration: none;
@@ -317,7 +317,7 @@
     background-color: rgb(var(--amber) / 0.14);
   }
 
-  /* ── Trail reading — stacked panes ───────────────────────────────────── */
+  /* ── Trail reading - stacked panes ───────────────────────────────────── */
   .trail-scroller {
     display: flex;
     height: calc(100dvh - 7rem);
@@ -419,7 +419,7 @@ html.lenis body {
   overflow: hidden;
 }
 
-/* Static grain overlay — a printed-paper texture, never animated. */
+/* Static grain overlay - a printed-paper texture, never animated. */
 .grain {
   position: fixed;
   inset: 0;

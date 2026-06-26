@@ -1,158 +1,144 @@
 /**
- * The real territory — Mohit's worldview, not generic AI-builder labels.
+ * The real territory. Five regions of Mohit's worldview, not generic AI-builder
+ * labels. These are the homepage map and live at /regions/[slug]. The connections
+ * are first-class content: the genuine links between regions, each annotated with
+ * why two ideas relate. Map positions are hand-placed (percentages of the field).
  *
- * These six regions are the homepage map and live at /regions/[slug]. The
- * `connections` are first-class content: the non-obvious links between regions,
- * each annotated with *why* two ideas relate. Map positions are hand-placed for a
- * pleasing constellation (percentages of the map field).
+ * House style across the whole site: no em dashes.
  */
 
 export type RegionSlug =
-  | "recapture-pattern"
-  | "behavior-capture"
-  | "two-tier-future"
+  | "power-and-recapture"
+  | "economics-of-ai"
   | "leaving-earth"
-  | "longevity"
-  | "verification";
+  | "longevity-and-biology"
+  | "acceleration-and-optimism";
 
 export interface Region {
   slug: RegionSlug;
   title: string;
-  /** Short label for the map node and breadcrumbs. */
   short: string;
-  /** One line — the glance. */
   glance: string;
-  /** A paragraph for the region page. */
   blurb: string;
-  /** Accent semantics: oxblood = a force to watch; amber = a protector / expansion play. */
+  /** Accent semantics: oxblood = a force to watch; amber = a frontier or protector play. */
   accent: "amber" | "oxblood";
-  /** Position on the map field, as percentages (0–100). */
   pos: { x: number; y: number };
-  /** Relative node weight on the map. */
   size: number;
 }
 
 export interface Connection {
   a: RegionSlug;
   b: RegionSlug;
-  /** Why these two ideas relate — the connection is the content. */
   why: string;
 }
 
 export const regions: Region[] = [
   {
-    slug: "recapture-pattern",
-    title: "The recapture pattern",
-    short: "Recapture",
-    glance: "Every liberating technology eventually gets recaptured into concentration.",
+    slug: "acceleration-and-optimism",
+    title: "Acceleration and Optimism",
+    short: "Acceleration",
+    glance:
+      "What actually accelerates a civilization, and the optimism that does the work. The spine of everything here.",
     blurb:
-      "The printing press, radio, the open web — each arrived as a great decentralizer and each was pulled back into a few hands. The pattern isn't a conspiracy; it's the default gravity of capital, distribution, and attention. Naming the pattern is the first move toward resisting it: if recapture is the rule, then the interesting work is designing the exceptions.",
-    accent: "oxblood",
-    pos: { x: 27, y: 37 },
-    size: 1.18,
+      "Not everything that wins moves us forward. The most lucrative business model of our era is attention extraction, and it is a drag dressed as progress. Real acceleration points our best people and our best capital at the frontiers whose payoff has no ceiling, and keeps human flourishing in the frame rather than treating it as a side effect of revenue. Optimism here is not a mood. It is a direction you point the most ambitious people, and a scoreboard pointed the right way.",
+    accent: "amber",
+    pos: { x: 50, y: 45 },
+    size: 1.25,
   },
   {
-    slug: "behavior-capture",
-    title: "The economics of AI & behavior capture",
-    short: "Behavior capture",
-    glance: "The real risk of AI isn't the machine — it's the business model around it.",
+    slug: "power-and-recapture",
+    title: "Power and Recapture",
+    short: "Recapture",
+    glance:
+      "Every liberating technology is sold as freedom and ends as control. The work is to build against that.",
     blurb:
-      "The attention economy is co-produced: top-down by platforms optimizing for engagement, and bottom-up by an entire clipping industry of money-chasers. Point a far more capable AI at that same objective function and you don't get a smarter helper — you get a far better behavior-capture engine. The danger was never the model's intelligence; it was what we paid it to want.",
+      "A new technology drops a cost to zero and the field looks flat, then the incumbents absorb it and the tool built to spread power becomes the most efficient instrument ever made for concentrating it. The printing press, the internet, crypto, and now AI all run the same play. Recapture is not destiny, it is the default, and defaults are the easiest thing in the world to change if you decide early enough to be the one who changes them.",
     accent: "oxblood",
-    pos: { x: 55, y: 22 },
+    pos: { x: 23, y: 25 },
     size: 1.06,
   },
   {
-    slug: "two-tier-future",
-    title: "The two-tier future",
-    short: "Two tiers",
-    glance: "AI doesn't create the gap — it widens one that already exists.",
+    slug: "economics-of-ai",
+    title: "The Economics of AI",
+    short: "Economics of AI",
+    glance:
+      "The real risk of AI is not the machine. It is the business model we point it at.",
     blurb:
-      "Argued backward from a concrete near-future scene rather than forward from a trend line. One tier compounds: it uses AI to think better, build faster, and buy back time. The other is used by it — managed, nudged, and rented to. The fork isn't decided by the technology; it's decided by who learns to wield it and who is wielded. The essay's job is to make that fork vivid before it sets.",
+      "The danger was never the intelligence. It is what we pay the machine to want. A feed sold your attention and an assistant sells your trust, which is the more dangerous thing to sell. Behavior capture, the two-tier future, and the assistant you stop putting down all run on the same incentive, and a business model is a choice, not a law of nature. Verification is the protector half of the answer, and almost nobody is building it.",
     accent: "oxblood",
-    pos: { x: 77, y: 39 },
-    size: 1.02,
+    pos: { x: 77, y: 33 },
+    size: 1.1,
   },
   {
     slug: "leaving-earth",
     title: "Leaving Earth",
     short: "Leaving Earth",
-    glance: "Why a real share of humanity should aim to become multiplanetary.",
+    glance: "Why becoming multiplanetary is one of the central projects of this century.",
     blurb:
-      "Not as an escape hatch and not as a billionaire's hobby — as insurance and as direction. A species with all its eggs on one rock is one bad century from the end of the story. But the deeper argument is about ambition: a civilization needs a frontier to organize its optimism around. Leaving Earth is the clearest one we have.",
+      "When AI runs the software and robots run the factories, a vast amount of human effort comes free, and the only question that matters is where it goes. Space is the frontier that reorganizes everything else, the keystone that holds up every other ambition. A species that knows it is going to the stars stops fighting so hard over a single hill. The way you protect the only home you have is to stop being a single point of failure.",
     accent: "amber",
-    pos: { x: 20, y: 71 },
-    size: 0.96,
+    pos: { x: 27, y: 74 },
+    size: 0.98,
   },
   {
-    slug: "longevity",
-    title: "Longevity",
+    slug: "longevity-and-biology",
+    title: "Longevity and Biology",
     short: "Longevity",
-    glance: "Biology is becoming a programming language.",
+    glance:
+      "Biology is becoming a language we can read and write, and lifespan a choice rather than a dice roll.",
     blurb:
-      "Aging is being reframed from an inevitability into a set of mechanisms — and mechanisms can be edited. As biology turns legible and then programmable, the question shifts from 'how long can we live?' to 'what do we build with the extra time, and who gets it first?' The science is optimistic; the distribution is where the fight will be.",
+      "The problem was never that life is short. It is that its length is handed to us rather than held by us, and a death sentence with an unknown date makes a whole species play short-term games. Control the clock and the planning horizon changes, which changes what humanity is willing to build. Longer lives are also the precondition for the long journey off the planet. The science is becoming real, and the fight is to make it cheap and common before the gap can calcify.",
     accent: "amber",
-    pos: { x: 79, y: 69 },
-    size: 0.96,
-  },
-  {
-    slug: "verification",
-    title: "Specific optimism & verification",
-    short: "Verification",
-    glance: "Verification is the protector play — specific optimism, made concrete.",
-    blurb:
-      "Optimism that means something isn't a mood; it's a bet on a specific mechanism. In a world where generation is free and behavior capture is industrialized, the scarce, valuable thing becomes verification: proof of what's real, who did what, and what actually happened. Verification is the counter-move to recapture and to capture both — the protector layer a good future quietly runs on.",
-    accent: "amber",
-    pos: { x: 46, y: 65 },
-    size: 1.04,
+    pos: { x: 75, y: 73 },
+    size: 0.98,
   },
 ];
 
 export const connections: Connection[] = [
   {
-    a: "recapture-pattern",
-    b: "behavior-capture",
-    why: "The attention economy is the recapture pattern running on AI: a liberating technology pulled back into concentration through its business model.",
+    a: "power-and-recapture",
+    b: "economics-of-ai",
+    why: "Behavior capture and the two-tier future are the recapture pattern running on AI, the same liberation pulled back into concentration.",
   },
   {
-    a: "recapture-pattern",
-    b: "two-tier-future",
-    why: "Concentration is how the gap hardens — recapture is the mechanism underneath the two tiers.",
+    a: "power-and-recapture",
+    b: "acceleration-and-optimism",
+    why: "Recapture is the default that acceleration has to resist. The scoreboard exists to name who resists it and who runs it.",
   },
   {
-    a: "recapture-pattern",
-    b: "verification",
-    why: "Verification is the counter-move: the protector play designed against recapture.",
-  },
-  {
-    a: "behavior-capture",
-    b: "two-tier-future",
-    why: "Behavior capture is one engine quietly widening the gap.",
-  },
-  {
-    a: "behavior-capture",
-    b: "verification",
-    why: "Verification answers capture: proving what's real against what was engineered to move you.",
-  },
-  {
-    a: "two-tier-future",
-    b: "verification",
-    why: "Verification is what could keep the gap from hardening into caste.",
+    a: "economics-of-ai",
+    b: "acceleration-and-optimism",
+    why: "The attention machine looks like a winner and is actually a drag. Verification is the protector half of the bet.",
   },
   {
     a: "leaving-earth",
-    b: "longevity",
-    why: "The same bet on a bigger future — more room, and more time to use it.",
+    b: "longevity-and-biology",
+    why: "The same bet on a bigger future. Longer lives are the precondition for the long journey off the planet.",
   },
   {
-    a: "verification",
+    a: "acceleration-and-optimism",
     b: "leaving-earth",
-    why: "Specific optimism: not 'it'll be fine,' but the concrete bet that makes the leap worth taking.",
+    why: "When AI frees a species worth of effort, space is the frontier with no ceiling to point it at.",
   },
   {
-    a: "longevity",
-    b: "two-tier-future",
-    why: "If biology becomes programmable, who gets the upgrade decides how deep the two tiers run.",
+    a: "acceleration-and-optimism",
+    b: "longevity-and-biology",
+    why: "Programmable biology is the clearest accelerant of all, a germ-theory moment if we choose to fund it.",
+  },
+  {
+    a: "economics-of-ai",
+    b: "longevity-and-biology",
+    why: "Whoever controls the clock first is the two-tier divide taken to its limit, a split not in money but in years.",
+  },
+  {
+    a: "power-and-recapture",
+    b: "longevity-and-biology",
+    why: "Longevity is the next technology lined up to be recaptured, sold as liberation and gated by wealth.",
+  },
+  {
+    a: "power-and-recapture",
+    b: "leaving-earth",
+    why: "Leaving Earth can concentrate too, a frontier captured by a few hands rather than opened to many.",
   },
 ];
 

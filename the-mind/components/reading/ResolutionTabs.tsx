@@ -12,7 +12,7 @@ type Depth = "glance" | "map" | "deep";
  *  · Deep   → the full essay (the default; reading is sacred)
  *
  * Deep is the default so a first-time visitor simply *reads*. The control is an
- * affordance for those who want to skim or orient first — never a tax.
+ * affordance for those who want to skim or orient first - never a tax.
  */
 export function ResolutionTabs({
   glance,
@@ -113,7 +113,7 @@ export function ResolutionTabs({
               ))}
             </ol>
           ) : (
-            <p className="text-muted">This essay reads as one continuous movement — open the deep read.</p>
+            <p className="text-muted">This essay reads as one continuous movement. Open the deep read.</p>
           )}
           <button
             onClick={() => setDepth("deep")}

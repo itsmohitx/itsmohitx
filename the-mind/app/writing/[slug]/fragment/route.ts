@@ -7,6 +7,9 @@ import { getRegion } from "@/content/regions";
  * can open it in a pane without a full navigation. Static per slug (the corpus is
  * known at build time), which keeps it instant and cacheable.
  */
+// Prerendered to a static JSON file per slug so it works under static export.
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   return getEssaySlugs().map((slug) => ({ slug }));
 }

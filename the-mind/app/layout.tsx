@@ -11,13 +11,13 @@ import { Footer } from "@/components/site/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.author}`,
+    default: `${site.name} · ${site.author}`,
     template: `%s · ${site.name}`,
   },
   description: site.description,
   authors: [{ name: site.author }],
   openGraph: {
-    title: `${site.name} — ${site.author}`,
+    title: `${site.name} · ${site.author}`,
     description: site.description,
     type: "website",
     siteName: site.name,

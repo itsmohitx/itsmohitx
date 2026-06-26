@@ -10,7 +10,7 @@ export function Footer() {
             <Link href="/" className="font-sans text-base font-medium tracking-tight">
               The <span className="text-amber">Mind</span>
             </Link>
-            {/* The credibility whisper — one quiet line, no logos, no grid. */}
+            {/* The credibility whisper - one quiet line, no logos, no grid. */}
             <p className="mt-3 font-mono text-[0.72rem] leading-relaxed text-faint">
               {site.credibility}
             </p>
@@ -57,7 +57,9 @@ export function Footer() {
               {futureProject.name} →
             </Link>
           ) : (
-            <p className="font-serif text-lg text-ink">{futureProject.name}</p>
+            <p className="font-serif text-lg text-muted" aria-disabled="true">
+              {futureProject.name} (coming soon)
+            </p>
           )}
           <p className="mt-1 max-w-xl font-sans text-[0.85rem] leading-relaxed text-muted">
             {futureProject.blurb}
@@ -65,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line/10 pt-6 text-faint sm:flex-row sm:items-center">
-          <p className="font-mono text-[0.7rem]">
+          <p className="font-mono text-[0.7rem]" suppressHydrationWarning>
             © {new Date().getFullYear()} {site.author} · {site.handle}
           </p>
           <p className="font-mono text-[0.7rem]">Set in Newsreader &amp; Space Grotesk</p>

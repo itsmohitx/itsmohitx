@@ -6,7 +6,7 @@ import { PageNav } from "@/components/site/PageNav";
 
 export const metadata: Metadata = {
   title: "Writing",
-  description: "The essays — deep takes on frontier technology and where it takes humanity.",
+  description: "The essays. Deep takes on frontier technology and where it takes humanity.",
 };
 
 function formatDate(iso: string): string {
@@ -31,7 +31,7 @@ export default function WritingIndex() {
         </h1>
         <p className="mt-5 font-serif text-xl font-light leading-relaxed text-muted">
           The substance. Deep takes on frontier technology and where it takes
-          humanity — read at a glance, as a map, or in full.
+          humanity. Read at a glance, as a map, or in full.
         </p>
       </header>
 

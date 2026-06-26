@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 const now = [
   {
     label: "Building",
-    body: "The e/acc Index — an index ranking how much companies actually accelerate civilization. Quiet for now; it'll get a real home here when it's ready.",
+    body: "The e/acc Index, an index ranking how much companies actually accelerate civilization. Quiet for now; it'll get a real home here when it's ready.",
   },
   {
     label: "Writing",
-    body: "Working through the six regions one essay at a time, argued the way I actually think them — usually backward from a concrete future scene.",
+    body: "Working through the five regions one essay at a time, argued the way I actually think them, usually backward from a concrete future scene.",
   },
   {
     label: "Reading",
@@ -22,7 +22,7 @@ const now = [
   },
   {
     label: "Thinking about",
-    body: "How to design the exception to the recapture pattern — the thing that stays free because concentration around it is structurally useless.",
+    body: "How to design the exception to the recapture pattern, the thing that stays free because concentration around it is structurally useless.",
   },
 ];
 

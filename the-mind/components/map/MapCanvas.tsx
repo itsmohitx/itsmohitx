@@ -7,7 +7,7 @@ import { regions, connections, type RegionSlug } from "@/content/regions";
 
 /**
  * The animated regions map. Split out from RegionsMap so Framer Motion is only
- * loaded (lazily) on wide screens — the homepage's initial payload stays light and
+ * loaded (lazily) on wide screens - the homepage's initial payload stays light and
  * the SSR'd list shows instantly. Restrained motion only: gentle drift, soft glow,
  * tasteful hover. Honours prefers-reduced-motion (renders static).
  */
@@ -24,7 +24,7 @@ export default function MapCanvas() {
       }}
       onMouseLeave={() => setHovered(null)}
     >
-      {/* Connections — annotated edges, drawn behind the nodes. */}
+      {/* Connections - annotated edges, drawn behind the nodes. */}
       <svg
         className="pointer-events-none absolute inset-0 h-full w-full"
         viewBox="0 0 100 100"
@@ -73,7 +73,7 @@ export default function MapCanvas() {
           >
             <Link
               href={`/regions/${r.slug}`}
-              aria-label={`${r.title} — ${r.glance}`}
+              aria-label={`${r.title}. ${r.glance}`}
               onMouseEnter={() => setHovered(r.slug)}
               onFocus={() => setHovered(r.slug)}
               onBlur={() => setHovered(null)}
@@ -133,7 +133,7 @@ export default function MapCanvas() {
 
       {/* quiet hint */}
       <p className="pointer-events-none absolute bottom-3 left-0 right-0 text-center font-mono text-[0.65rem] uppercase tracking-[0.18em] text-faint">
-        Six regions · click to enter · hover to glimpse
+        Five regions · click to enter · hover to glimpse
       </p>
     </div>
   );
