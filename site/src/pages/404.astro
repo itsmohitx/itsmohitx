@@ -1,0 +1,20 @@
+---
+import Base from "../layouts/Base.astro";
+import { withBase } from "../lib/site";
+---
+
+<Base title="Not found" description="That page is not here.">
+  <div class="wrap" style="padding: 5rem 1.25rem; text-align: center;">
+    <p class="eyebrow">404</p>
+    <h1 class="prose" style="font-size: clamp(2rem, 1.5rem + 2vw, 2.8rem); margin: 1rem auto 0;">
+      That page is not here.
+    </h1>
+    <p class="lede" style="margin: 1rem auto 0; max-width: 28rem;">
+      The link may be old, or the idea may not be written yet.
+    </p>
+    <div style="margin-top: 2rem; display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap;">
+      <a href={withBase("/")} class="btn btn-primary">All essays</a>
+      <a href={withBase("/about")} class="btn">About</a>
+    </div>
+  </div>
+</Base>

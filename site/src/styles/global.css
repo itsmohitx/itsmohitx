@@ -1,0 +1,333 @@
+@import "@fontsource-variable/newsreader/index.css";
+@import "@fontsource-variable/newsreader/standard-italic.css";
+
+/*
+  Warm Ink. One token set, dark by default, light by toggle (via [data-theme]).
+  A single amber accent. Calm, literary, fast. The writing is the design.
+*/
+:root,
+:root[data-theme="dark"] {
+  --bg: #0f0d0b;
+  --surface: #16130f;
+  --raised: #1c1813;
+  --ink: #f1ece3;
+  --muted: #9c9488;
+  --faint: #6f685e;
+  --line: rgba(255, 248, 238, 0.1);
+  --line-strong: rgba(255, 248, 238, 0.16);
+  --amber: #d8a24a;
+  --amber-soft: rgba(216, 162, 74, 0.14);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f6f1e8;
+  --surface: #fbf7f0;
+  --raised: #fffdf8;
+  --ink: #1a1714;
+  --muted: #6b6258;
+  --faint: #8a8174;
+  --line: rgba(26, 23, 20, 0.13);
+  --line-strong: rgba(26, 23, 20, 0.2);
+  --amber: #a8741e;
+  --amber-soft: rgba(168, 116, 30, 0.13);
+  color-scheme: light;
+}
+
+:root {
+  --font-serif: "Newsreader Variable", Newsreader, Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --measure: 40rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.06rem, 0.98rem + 0.4vw, 1.2rem);
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--amber-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+a {
+  color: var(--amber);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.sans {
+  font-family: var(--font-sans);
+}
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.meta {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  transform: translateY(-160%);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ── Site chrome ──────────────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-brand {
+  font-family: var(--font-serif);
+  font-weight: 560;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 0.4rem;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  height: 2.1rem;
+  width: 2.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  color: var(--ink);
+  border-color: var(--amber);
+}
+.theme-toggle .sun {
+  display: none;
+}
+:root[data-theme="light"] .theme-toggle .sun {
+  display: block;
+}
+:root[data-theme="light"] .theme-toggle .moon {
+  display: none;
+}
+
+.footer {
+  margin-top: 6rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-sans);
+}
+.footer-inner {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer a:hover {
+  color: var(--ink);
+}
+.footer .disabled {
+  color: var(--faint);
+  cursor: not-allowed;
+}
+
+/* ── Prose / the reading experience ───────────────────────────── */
+.prose {
+  max-width: var(--measure);
+}
+.prose > * + * {
+  margin-top: 1.5em;
+}
+.prose h1 {
+  font-size: clamp(2rem, 1.5rem + 2.4vw, 3rem);
+  font-weight: 620;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.prose h2 {
+  font-size: 1.55em;
+  font-weight: 580;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 2.1em;
+}
+.prose h3 {
+  font-size: 1.22em;
+  font-weight: 580;
+  margin-top: 1.7em;
+}
+.prose h2 + *,
+.prose h3 + * {
+  margin-top: 0.7em;
+}
+.prose p {
+  text-wrap: pretty;
+}
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--amber) 45%, transparent);
+}
+.prose a:hover {
+  text-decoration-color: var(--amber);
+}
+.prose strong {
+  font-weight: 640;
+  color: var(--ink);
+}
+.prose blockquote {
+  margin: 0;
+  padding-left: 1.2rem;
+  border-left: 2px solid color-mix(in srgb, var(--amber) 55%, transparent);
+  font-style: italic;
+  color: color-mix(in srgb, var(--ink) 88%, transparent);
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.4rem;
+}
+.prose li + li {
+  margin-top: 0.45em;
+}
+.prose hr {
+  border: 0;
+  height: 1px;
+  background: var(--line-strong);
+  width: 38%;
+  margin: 2.4em auto;
+}
+
+/* ── Reusable pieces ──────────────────────────────────────────── */
+.lede {
+  font-size: 1.18rem;
+  line-height: 1.6;
+  color: var(--muted);
+  font-family: var(--font-serif);
+}
+.card {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  padding: 1.4rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+.card:hover {
+  border-color: color-mix(in srgb, var(--amber) 45%, transparent);
+  background: var(--surface);
+}
+.btn {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+.btn:hover {
+  border-color: var(--amber);
+}
+.btn-primary {
+  background: var(--amber);
+  color: var(--bg);
+  border-color: var(--amber);
+  font-weight: 500;
+}
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

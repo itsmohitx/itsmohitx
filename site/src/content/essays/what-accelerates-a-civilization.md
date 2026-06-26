@@ -1,0 +1,72 @@
+---
+title: What Accelerates a Civilization
+type: essay
+---
+
+# What Accelerates a Civilization
+
+There is a question hiding under most of the noise about technology, and almost nobody asks it straight. Not "is technology good." That is settled and boring. The real question is sharper. What actually accelerates a civilization, and what only looks like it does.
+
+I think about this more than anything else. It is the question my work keeps circling, and the one I am building a tool to answer. Here is the way I see it.
+
+## Start at the destination
+
+Take the long view, the way an engineer reads a finished machine backward. Picture a civilization that has actually made it. It lives long. It has spread beyond its home planet. It has lifted the floor under its people so that survival is no longer the daily job. It spends its freed energy on the hard frontiers and the search for meaning, not on fighting over scraps.
+
+That is the destination. Acceleration is just how fast we move toward it.
+
+So here is my definition, and it is not the textbook one. A company accelerates civilization when it moves us toward that future and keeps the quality of human life as a real goal, not only a side effect of chasing revenue. Economic growth is part of it. But the moment growth becomes the only thing a company optimizes for, it stops being an accelerant and turns into something else.
+
+## The accelerants are real, and they are happening now
+
+This is not a someday story. In 2026 the accelerants are switching on.
+
+In energy, fusion crossed from physics experiment to engineering pilot this year, with private companies powering up demonstration machines built to prove sustained net electricity. The field is drawing record investment.
+
+In biology, the first personalized cancer vaccines are reading out their pivotal trials, and brain-computer interfaces are moving from headline demos toward real therapeutic approval. We are starting to treat the body as something we can read and rewrite.
+
+In space, the cost of reaching orbit has fallen by more than a factor of ten in a single decade, and the serious plans on the table now include mining the Moon for the raw materials of an off-world industry.
+
+And under all of it, intelligence is getting cheap. AI now takes the majority of frontier venture capital in the world, because it is the enabling layer beneath every other advance.
+
+These are accelerants. Each one expands what humanity can be, and each one at its best is run by people who keep human flourishing in the frame.
+
+## Not everything that wins is an accelerant
+
+Here is the part most people miss, and it is the center of everything I think.
+
+Not every profitable technology company moves us forward. The most lucrative business model of our era is attention extraction. Build a feed, learn what holds the human eye, sell that attention to advertisers. It is one of the great money machines ever invented, and it is celebrated as technology winning.
+
+It is a drag. A company can be enormous, beloved by the market, and a net negative on the civilizational ladder. The attention machine does not carry us toward the long-lived, multiplanetary, flourishing future. It carries us toward a more captured, more distracted, more manipulated version of the present, and it does this because the economic model rewards exactly that. Profit and acceleration have quietly come apart, and almost nobody is keeping track.
+
+## We are keeping score with the wrong number
+
+The reason we miss it is simple. We measure companies by market cap and revenue, and we treat those numbers as if they measure progress. They do not. They measure economic growth, which is not the same thing as civilizational acceleration, and the two have drifted far enough apart that the gap is now the whole story.
+
+On the market-cap scoreboard, the attention machine looks like a champion. Change the scoreboard to net civilizational acceleration and the ranking inverts. The companies bending the future upward are often not the ones winning the old game, and some of the biggest winners of the old game are quietly holding us back.
+
+If you measure the wrong thing, you reward the wrong thing. We have been doing it for twenty years.
+
+## Why this is not the usual accelerationism
+
+I should be clear about where I stand, because it is easy to misread. I am an accelerationist. I believe unconstrained progress has solved more human problems than anything else, and I want more of it, faster. On the broad strokes I am with the techno-optimists.
+
+But "accelerate everything" is a lazy slogan, and the movement has a blind spot. It cheers any technological progress and any profitable tech company as a win for the future. Some of what it cheers is drag wearing the colors of progress. And its critics are not entirely wrong about the danger they name, the concentration of power in very few hands. That danger is real. It is the natural endpoint of acceleration with no conscience and no scoreboard.
+
+The answer is not to brake. Braking is the doomer's mistake, and it forfeits the future. The answer is to measure. To tell the difference, out loud and in public, between the companies accelerating civilization and the ones merely accelerating their own balance sheet.
+
+## So I am building the scoreboard
+
+This is why I am building an index that ranks companies by how much they actually accelerate civilization, not by how much they are worth.
+
+It will be fully public and fully transparent. Every input, every weight, every judgment, open, so that no one can claim it was bought or bent. A scoreboard only works when everyone can see the rules. I would rather be argued with in the open than trusted in the dark.
+
+It is a separate project with its own home, and it is launching soon. This essay is the why. The index is the how.
+
+## The optimism underneath all of this
+
+None of this is pessimism about technology. It is the opposite. I am betting the next chapter is the best one humanity has ever written, that we end diseases, leave the planet, and live long enough to mean it.
+
+But the bright future is not automatic, and it is not measured by the size of a few companies. It is built by pointing our best people and our best capital at the things that actually move us up the ladder, and by being honest about the things that only pretend to.
+
+Optimism is not a feeling. It is a scoreboard pointed in the right direction. I am trying to build the scoreboard.

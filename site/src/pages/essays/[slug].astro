@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { readingTime, teaser, withBase, essayMeta } from "../../lib/site";
+
+export async function getStaticPaths() {
+  const essays = await getCollection("essays");
+  return essays.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const rt = readingTime(entry.body);
+const meta = essayMeta(entry.slug);
+const label = meta.kind === "pillar" ? "Essay" : "Note";
+
+// The funnel, in reverse: seeds that open into this essay.
+const seeds = (await getCollection("seeds"))
+  .filter((s) => s.data.links_to === entry.data.title)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<Base title={entry.data.title} description={teaser(entry.body)}>
+  <div class="wrap" style="padding-top: 2.5rem;">
+    <a href={withBase("/")} class="meta" style="text-decoration: none;">← All essays</a>
+
+    <p class="eyebrow" style="margin-top: 1.6rem;">{label} · {rt} min read</p>
+
+    <article class="prose" style="margin-top: 0.9rem;">
+      <Content />
+    </article>
+
+    {
+      seeds.length > 0 && (
+        <section style="margin-top: 4rem; border-top: 1px solid var(--line); padding-top: 1.75rem;">
+          <p class="eyebrow">Doorways into this essay</p>
+          <ul style="list-style: none; padding: 0; margin: 1rem 0 0;">
+            {seeds.map((s) => (
+              <li style="margin-top: 0.6rem;">
+                <a href={withBase(`/seeds/${s.slug}`)} class="sans" style="color: var(--ink); text-decoration: none;">
+                  {s.data.title} <span style="color: var(--amber);">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <nav style="margin-top: 4rem; border-top: 1px solid var(--line); padding-top: 1.5rem;">
+      <a href={withBase("/")} class="btn">← All essays</a>
+    </nav>
+  </div>
+</Base>

@@ -1,0 +1,18 @@
+---
+import { site, withBase } from "../lib/site";
+import ThemeToggle from "./ThemeToggle.astro";
+
+const here = Astro.url.pathname;
+const onAbout = here.includes("/about");
+---
+
+<header class="nav">
+  <nav class="nav-inner" aria-label="Primary">
+    <a href={withBase("/")} class="nav-brand">{site.name}</a>
+    <div class="nav-links">
+      <a href={withBase("/")} aria-current={onAbout ? undefined : "page"}>Essays</a>
+      <a href={withBase("/about")} aria-current={onAbout ? "page" : undefined}>About</a>
+      <ThemeToggle />
+    </div>
+  </nav>
+</header>
