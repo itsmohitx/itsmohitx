@@ -1,14 +1,16 @@
-name: Deploy The Mind to GitHub Pages
+name: Deploy sites to GitHub Pages
 
-# Builds the static export of the-mind/ and deploys it to GitHub Pages.
-# One-time setup: Settings, Pages, Source -> GitHub Actions. After that, every push
-# that touches the-mind/ (on the listed branches) rebuilds and redeploys.
+# Builds TWO static exports into one Pages artifact:
+#   the-mind/  -> site root      (the original, unchanged, stays live as-is)
+#   mindx/     -> /v2 subpath    (the new MohitX evolution, preview)
+# One-time setup (already done): Settings, Pages, Source -> GitHub Actions.
 
 on:
   push:
     branches: ["main", "master", "claude/new-session-rensu1"]
     paths:
       - "the-mind/**"
+      - "mindx/**"
       - ".github/workflows/deploy-the-mind.yml"
   workflow_dispatch:
 
@@ -17,7 +19,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment; let an in-progress run finish.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -25,9 +26,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: the-mind
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,28 +34,41 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
-          cache-dependency-path: the-mind/package-lock.json
 
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build static export
+      - name: Build the original (root)
+        working-directory: the-mind
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
           NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
-        run: npm run build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Build MohitX (v2 preview)
+        working-directory: mindx
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}/v2
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}/v2
+        run: |
+          npm install
+          npm run build
+
+      - name: Merge artifacts
+        run: |
+          mkdir -p _site
+          cp -r the-mind/out/. _site/
+          mkdir -p _site/v2
+          cp -r mindx/out/. _site/v2/
+          touch _site/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: the-mind/out
+          path: _site
 
   deploy:
     needs: build
