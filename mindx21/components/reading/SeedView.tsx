@@ -13,7 +13,7 @@ export function SeedView({ seed, pillar }: { seed: Seed; pillar: EssayMeta | nul
   return (
     <article className="mx-auto max-w-measure">
       <header className="mb-9">
-        <p className="font-serif text-[0.95rem] italic text-ink2">
+        <p className="type-label">
           A short note
           {region && (
             <>
@@ -40,7 +40,7 @@ export function SeedView({ seed, pillar }: { seed: Seed; pillar: EssayMeta | nul
 
       {pillar && (
         <div className="mt-12 border-t border-line/[.16] pt-5">
-          <p className="font-serif text-[0.95rem] italic text-ink2">Read the full essay</p>
+          <p className="type-label">Read the full essay</p>
           <Link
             href={`/writing/${pillar.slug}`}
             className="group mt-1.5 block font-serif text-xl text-ink transition-colors hover:text-accent"

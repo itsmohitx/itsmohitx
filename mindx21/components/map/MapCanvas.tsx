@@ -111,7 +111,7 @@ export default function MapCanvas({ landmarks }: { landmarks: Landmark[] }) {
                     : "0 0 28px -4px rgb(var(--accent) / 0.8)",
                 }}
               />
-              <span className="pointer-events-none mt-3 whitespace-nowrap text-center font-mono text-[0.84rem] uppercase tracking-[0.14em] text-ink">
+              <span className="pointer-events-none mt-3 whitespace-nowrap text-center font-serif text-[1rem] font-semibold tracking-[0.01em] text-ink">
                 {r.short}
               </span>
             </Link>
@@ -152,7 +152,7 @@ export default function MapCanvas({ landmarks }: { landmarks: Landmark[] }) {
                 aria-hidden
                 className="block h-[0.35rem] w-[0.35rem] border border-line/50 bg-bg transition-colors group-hover:bg-accent"
               />
-              <span className="pointer-events-none mt-1 max-w-[9.5rem] text-center font-serif text-[0.72rem] italic leading-tight text-ink2 transition-colors group-hover:text-accent">
+              <span className="pointer-events-none mt-1 max-w-[9.5rem] text-center font-serif text-[0.8rem] leading-tight text-ink2 transition-colors group-hover:text-accent">
                 {l.title}
               </span>
             </Link>
@@ -160,7 +160,7 @@ export default function MapCanvas({ landmarks }: { landmarks: Landmark[] }) {
         );
       })}
 
-      <p className="pointer-events-none absolute bottom-3 left-0 right-0 text-center font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink3">
+      <p className="pointer-events-none absolute bottom-3 left-0 right-0 text-center font-serif text-[0.875rem] text-ink3">
         Every point is a link
       </p>
     </div>

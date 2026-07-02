@@ -52,10 +52,10 @@ export default async function RegionPage({
         <h1 className="type-h1 text-balance">
           {region.title}
         </h1>
-        <p className="mt-5 font-serif text-xl font-light leading-relaxed text-accent sm:text-[1.3rem]">
+        <p className="type-dek mt-4 text-accent">
           {region.glance}
         </p>
-        <p className="reading mt-6 text-lg">{region.blurb}</p>
+        <p className="reading mt-6">{region.blurb}</p>
       </header>
 
       {/* Essays: title with the description left-aligned directly beneath it. */}
@@ -69,7 +69,7 @@ export default async function RegionPage({
                   <span className="font-serif text-xl text-ink transition-colors group-hover:text-accent">
                     {e.title}
                   </span>
-                  <span className="mt-1 block font-serif text-[0.95rem] leading-relaxed text-ink2">
+                  <span className="mt-1 block type-dek">
                     {e.glance}
                   </span>
                 </Link>
@@ -88,7 +88,7 @@ export default async function RegionPage({
             {seeds.map((s) => (
               <li key={s.slug} className="border-t border-line/[.16]">
                 <Link href={`/seeds/${s.slug}`} className="group block min-h-11 py-3.5">
-                  <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
+                  <span className="font-serif text-[1.0625rem] leading-snug text-ink transition-colors group-hover:text-accent">
                     {s.title}
                   </span>
                   <span className="mt-0.5 block type-label">
@@ -110,7 +110,7 @@ export default async function RegionPage({
                 <span className="font-serif text-lg text-ink transition-colors group-hover:text-accent">
                   {other.short} <span aria-hidden className="text-accent">→</span>
                 </span>
-                <span className="mt-1 block font-serif text-[0.95rem] leading-relaxed text-ink2">
+                <span className="mt-1 block type-dek">
                   {why}
                 </span>
               </Link>

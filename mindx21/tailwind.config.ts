@@ -25,12 +25,14 @@ const config: Config = {
         line: "rgb(var(--line) / <alpha-value>)",
       },
       fontFamily: {
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
+        serif: ["var(--font-source-serif)", "Georgia", "serif"],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
         mono: ["var(--font-fragment-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        /* ~62-68 characters of Fraunces body text: the one reading measure. */
-        measure: "40rem",
+        /* ~66 characters of Source Serif body at 19px: the one reading measure.
+           Measured in-browser: 608px at 19px is 67 characters per line. */
+        measure: "38rem",
         wide: "76rem",
       },
       animation: {

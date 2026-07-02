@@ -17,7 +17,7 @@ export function EssayView({ essay, next }: { essay: Essay; next: EssayMeta | nul
     <article className="mx-auto max-w-measure">
       <header className="mb-11">
         {region && (
-          <p className="font-serif text-[0.95rem] italic text-ink2">
+          <p className="type-label">
             From the region{" "}
             <Link href={`/regions/${region.slug}`} className="text-accent underline underline-offset-4">
               {region.title}
@@ -30,23 +30,19 @@ export function EssayView({ essay, next }: { essay: Essay; next: EssayMeta | nul
         <h1 className="type-h1 mt-4 [text-wrap:pretty] lg:w-[52rem] lg:max-w-none">
           {essay.title}
         </h1>
-        {essay.dek && (
-          <p className="mt-5 font-serif text-xl font-light leading-relaxed text-ink2 sm:text-[1.3rem]">
-            {essay.dek}
-          </p>
-        )}
-        <p className="mt-5 type-label not-italic">{essay.readingTime} minute read</p>
+        {essay.dek && <p className="type-dek mt-4">{essay.dek}</p>}
+        <p className="type-label mt-4 text-ink3">{essay.readingTime} minute read</p>
       </header>
 
       {showToc && (
         <nav aria-label="Contents" className="mb-10 border-y border-line/[.16] py-4">
-          <p className="font-serif text-[0.95rem] italic text-ink2">In this essay</p>
+          <p className="type-label">In this essay</p>
           <ol className="mt-2 space-y-1">
             {toc.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
-                  className="font-serif text-[0.98rem] text-ink2 underline-offset-4 transition-colors hover:text-accent hover:underline"
+                  className="type-label underline-offset-4 transition-colors hover:text-accent hover:underline"
                 >
                   {item.text}
                 </a>
@@ -60,7 +56,7 @@ export function EssayView({ essay, next }: { essay: Essay; next: EssayMeta | nul
 
       {next && (
         <div className="mt-16 border-t border-line/[.16] pt-5">
-          <p className="font-serif text-[0.95rem] italic text-ink2">Next essay</p>
+          <p className="type-label">Next essay</p>
           <Link
             href={`/writing/${next.slug}`}
             className="group mt-1.5 block font-serif text-xl text-ink transition-colors hover:text-accent"

@@ -34,15 +34,15 @@ export function Footer() {
       <div className="mx-auto max-w-wide px-5 py-12 sm:px-8">
         <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-6">
           <div>
-            <Link href="/" className="font-mono text-[0.82rem] uppercase tracking-[0.22em] text-ink">
+            <Link href="/" className="font-serif text-[0.95rem] font-semibold uppercase tracking-[0.18em] text-ink">
               {site.name}
             </Link>
-            <p className="mt-2 max-w-md font-serif text-[0.95rem] leading-relaxed text-ink2">
+            <p className="mt-2 max-w-md type-dek">
               {site.tagline}
             </p>
           </div>
 
-          <ul className="flex flex-wrap items-baseline gap-x-7 gap-y-3 font-mono text-[0.76rem] uppercase tracking-[0.12em]">
+          <ul className="flex flex-wrap items-baseline gap-x-7 gap-y-3 font-serif text-[0.9rem]">
             {nav.map((item) =>
               item.external ? (
                 <li key={item.label}>
@@ -79,7 +79,7 @@ export function Footer() {
           </ul>
         </div>
 
-        <p className="mt-10 font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink3" suppressHydrationWarning>
+        <p className="mt-10 font-serif text-[0.875rem] text-ink3" suppressHydrationWarning>
           © {new Date().getFullYear()} {site.author} ·{" "}
           <a href="https://glanzaventures.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
             Glanza Ventures

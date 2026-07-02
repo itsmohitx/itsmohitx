@@ -12,9 +12,9 @@ const LEAD_PULL =
   "If you measure the wrong thing, you reward the wrong thing. We have been doing it for twenty years.";
 
 /**
- * The editorial front page. One essay leads the essays area large, with a
- * verbatim pull-quote; the rest sit smaller and uneven beneath it. No dates.
- * Plain-language labels; mono uppercase stays in the navigation.
+ * The front page is an essay index: one centered reading column, one featured
+ * lead, then a calm scannable list. The hero line is the single place Fraunces
+ * appears; everything else is the reading serif.
  */
 export default function HomePage() {
   const essays = getAllEssays();
@@ -29,9 +29,11 @@ export default function HomePage() {
       <HeroBand />
 
       {/* The statement. */}
-      <section className="mx-auto max-w-wide px-5 pt-10 sm:px-8 sm:pt-14">
-        <h1 className="type-h1">{site.tagline}</h1>
-        <p className="reading mt-7 max-w-[38rem] text-[1.15rem] sm:text-[1.25rem]">
+      <section className="mx-auto max-w-measure px-5 pt-10 sm:px-8 sm:pt-12">
+        <h1 className="font-display text-[2.1rem] font-semibold leading-[1.1] tracking-[-0.015em] text-ink sm:text-[2.75rem]">
+          {site.tagline}
+        </h1>
+        <p className="reading mt-6">
           {site.description} The place to start checking my work is{" "}
           <a href={site.index.href} target="_blank" rel="noopener noreferrer">
             the e/acc Index
@@ -41,7 +43,7 @@ export default function HomePage() {
           every score.
         </p>
         {readFirst && (
-          <p className="mt-6 font-serif text-[1.02rem] text-ink2">
+          <p className="type-dek mt-5">
             New here? Read{" "}
             <Link href={`/writing/${readFirst.slug}`} className="text-accent underline underline-offset-4">
               {readFirst.title}
@@ -51,108 +53,92 @@ export default function HomePage() {
         )}
       </section>
 
-      {/* The essays: one clear lead, the rest smaller and uneven beneath it. */}
-      <section className="mt-14 border-t border-line/[.16] sm:mt-16">
-        <div className="mx-auto max-w-wide px-5 py-10 sm:px-8 sm:py-14">
-          {lead && (
-            <div className="max-w-3xl">
-              <p className="type-label">The lead essay</p>
-              <Link href={`/writing/${lead.slug}`} className="group mt-3 block">
-                <span className="block font-serif text-[1.9rem] font-semibold leading-[1.08] tracking-[-0.015em] text-ink transition-colors group-hover:text-accent sm:text-[2.6rem]">
-                  {lead.title}
-                </span>
+      {/* The essays: one featured lead, then a calm list. */}
+      <section className="mx-auto mt-12 max-w-measure px-5 sm:px-8">
+        <hr className="rule" />
+        {lead && (
+          <div className="pt-8">
+            <p className="type-label">The lead essay</p>
+            <Link href={`/writing/${lead.slug}`} className="group mt-2 block">
+              <span className="block font-serif text-[1.7rem] font-semibold leading-[1.15] tracking-[-0.01em] text-ink transition-colors group-hover:text-accent sm:text-[2.1rem]">
+                {lead.title}
+              </span>
+            </Link>
+            <blockquote className="mt-5 border-l-2 border-accent/60 pl-5 font-serif text-[1.2rem] italic leading-normal text-ink sm:text-[1.3rem]">
+              {LEAD_PULL}
+            </blockquote>
+            <p className="mt-4">
+              <Link
+                href={`/writing/${lead.slug}`}
+                className="type-dek text-accent underline underline-offset-4"
+              >
+                Read the essay ({lead.readingTime} minutes) →
               </Link>
-              <blockquote className="mt-6 max-w-2xl border-l-2 border-accent/60 pl-5 font-serif text-[1.25rem] font-light italic leading-snug text-ink sm:text-[1.5rem]">
-                {LEAD_PULL}
-              </blockquote>
-              <p className="mt-5">
-                <Link
-                  href={`/writing/${lead.slug}`}
-                  className="font-serif text-[1.02rem] text-accent underline underline-offset-4"
-                >
-                  Read the essay ({lead.readingTime} minutes) →
-                </Link>
-              </p>
-            </div>
-          )}
+            </p>
+          </div>
+        )}
 
-          {/* The rest, deliberately smaller and uneven: the first two carry a
-              summary line, the remaining four run compact. */}
-          <ol className="mt-12 max-w-2xl border-t border-line/[.16]">
-            {rest.slice(0, 2).map((e, i) => (
-              <li key={e.slug} className="border-b border-line/[.16]">
-                <Link href={`/writing/${e.slug}`} className="group block py-4">
-                  <span className="flex items-baseline gap-4">
-                    <span className="type-meta">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="font-serif text-[1.25rem] leading-snug text-ink transition-colors group-hover:text-accent">
-                      {e.title}
-                    </span>
-                  </span>
-                  <span className="mt-1 block pl-9 font-serif text-[0.95rem] leading-relaxed text-ink2">
-                    {e.glance}
-                  </span>
-                </Link>
-              </li>
-            ))}
-            {rest.slice(2).map((e, i) => (
-              <li key={e.slug} className="border-b border-line/[.16]">
-                <Link href={`/writing/${e.slug}`} className="group flex min-h-11 items-baseline gap-4 py-2.5">
-                  <span className="type-meta">
-                    {String(i + 3).padStart(2, "0")}
-                  </span>
-                  <span className="font-serif text-[1.02rem] leading-snug text-ink transition-colors group-hover:text-accent">
+        {/* The rest: the first two carry a summary line, the remaining run compact. */}
+        <ol className="mt-10 border-t border-line/[.16]">
+          {rest.slice(0, 2).map((e, i) => (
+            <li key={e.slug} className="border-b border-line/[.16]">
+              <Link href={`/writing/${e.slug}`} className="group block py-4">
+                <span className="flex items-baseline gap-4">
+                  <span className="type-meta">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-serif text-[1.3rem] leading-snug text-ink transition-colors group-hover:text-accent">
                     {e.title}
                   </span>
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </div>
+                </span>
+                <span className="type-dek mt-1 block pl-9">{e.glance}</span>
+              </Link>
+            </li>
+          ))}
+          {rest.slice(2).map((e, i) => (
+            <li key={e.slug} className="border-b border-line/[.16]">
+              <Link href={`/writing/${e.slug}`} className="group flex min-h-11 items-baseline gap-4 py-3">
+                <span className="type-meta">{String(i + 3).padStart(2, "0")}</span>
+                <span className="font-serif text-[1.1875rem] leading-snug text-ink transition-colors group-hover:text-accent">
+                  {e.title}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      {/* Regions: full-width rows. The map lives at /regions. */}
-      <section className="mt-2 sm:mt-4">
-        <div className="mx-auto flex max-w-wide items-baseline justify-between px-5 sm:px-8">
+      {/* Regions: the same centered column. The map lives at /regions. */}
+      <section className="mx-auto mt-14 max-w-measure px-5 sm:px-8">
+        <div className="flex items-baseline justify-between">
           <h2 className="type-h2">The territory</h2>
-          <Link
-            href="/regions"
-            className="font-serif text-[0.95rem] text-accent underline underline-offset-4"
-          >
+          <Link href="/regions" className="type-label text-accent underline underline-offset-4">
             See the map →
           </Link>
         </div>
-        <div className="mt-4">
+        <ul className="mt-4">
           {regions.map((r) => (
-            <div key={r.slug} className="border-t border-line/[.16] last:border-b">
-              <Link
-                href={`/regions/${r.slug}`}
-                className="group mx-auto flex max-w-wide flex-col gap-1 px-5 py-5 sm:flex-row sm:items-baseline sm:gap-10 sm:px-8"
-              >
-                <span className="w-56 shrink-0 font-serif text-[1.35rem] font-medium leading-snug text-ink transition-colors group-hover:text-accent">
+            <li key={r.slug} className="border-t border-line/[.16] last:border-b">
+              <Link href={`/regions/${r.slug}`} className="group block py-4">
+                <span className="font-serif text-[1.1875rem] leading-snug text-ink transition-colors group-hover:text-accent">
                   {r.title}
                 </span>
-                <span className="font-serif text-[0.98rem] leading-relaxed text-ink2">
-                  {r.glance}
-                </span>
+                <span className="type-dek mt-1 block">{r.glance}</span>
               </Link>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
-      {/* Seeds: short entry notes. */}
-      <section className="mx-auto mt-16 max-w-wide px-5 pb-4 sm:mt-20 sm:px-8">
+      {/* Seeds: short entry notes, one calm list. */}
+      <section className="mx-auto mt-14 max-w-measure px-5 pb-4 sm:px-8">
         <h2 className="type-h2">Seeds, the short way in</h2>
-        <ul className="mt-4 grid gap-x-14 sm:grid-cols-2">
+        <ul className="mt-4">
           {seeds.map((s) => (
-            <li key={s.slug} className="border-t border-line/[.16]">
-              <Link href={`/seeds/${s.slug}`} className="group block min-h-11 py-3.5">
-                <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
+            <li key={s.slug} className="border-t border-line/[.16] last:border-b">
+              <Link href={`/seeds/${s.slug}`} className="group block min-h-11 py-3">
+                <span className="font-serif text-[1.0625rem] leading-snug text-ink transition-colors group-hover:text-accent">
                   {s.title}
                 </span>
-                <span className="mt-0.5 block type-label">
+                <span className="type-label mt-0.5 block text-ink3">
                   From the essay: {essayTitle[s.links_to] ?? ""}
                 </span>
               </Link>

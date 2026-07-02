@@ -18,7 +18,7 @@ export function RegionsList() {
             <span className="w-56 shrink-0 font-serif text-xl leading-snug text-ink transition-colors group-hover:text-accent">
               {r.title}
             </span>
-            <span className="font-serif text-[0.95rem] leading-relaxed text-ink2">{r.glance}</span>
+            <span className="type-dek">{r.glance}</span>
           </Link>
         </li>
       ))}

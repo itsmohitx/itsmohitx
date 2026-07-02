@@ -75,13 +75,13 @@ export default async function EssayPage({
       <EssayView essay={essay} next={next} />
       {doorways.length > 0 && (
         <aside className="mx-auto mt-14 max-w-measure border-t border-line/[.16] pt-5">
-          <p className="font-serif text-[0.95rem] italic text-ink2">Shorter ways into this essay</p>
+          <p className="type-label">Shorter ways into this essay</p>
           <ul className="mt-2">
             {doorways.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={`/seeds/${s.slug}`}
-                  className="group inline-flex min-h-11 items-center font-serif text-[1.02rem] text-ink transition-colors hover:text-accent"
+                  className="group inline-flex min-h-11 items-center type-dek text-ink transition-colors hover:text-accent"
                 >
                   {s.title} <span aria-hidden className="ml-1 text-accent">→</span>
                 </Link>

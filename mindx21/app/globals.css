@@ -3,41 +3,43 @@
 @tailwind utilities;
 
 /*
-  MohitX tokens. One set, two themes, dark default.
-  DARK  "Cool Blackout": #0B0E12 / #EEF2F6 / electric blue #5FB0FF
-  LIGHT "Stark Print":   #FFFFFF / #0B0B0B / red #D8281C
+  MohitX tokens. One set, two themes, light default.
+  LIGHT "Warm Paper":    #FAF8F3 / #21201E / deep blue #0A5AB4
+  DARK  "Soft Neutral":  #15171B / #E7E7E9 / electric blue #5FB0FF
+  Contrast is tuned for long reading, roughly 12:1 to 15:1 for body text,
+  never the harsh 18:1 to 20:1 of pure black on pure white.
   Rules of the house: no boxes or rounded containers, hairline rules and
   full-bleed bands instead; secondary text stays high contrast (tinted ink,
   never neutral grey); the header band is the only gradient on the site;
   no em dashes in any copy.
 */
 :root,
-[data-theme="dark"] {
-  --bg: 10 14 21; /* #0A0E15, a clean deep blue-black rather than a muddy near black */
-  --ink: 240 244 249; /* #F0F4F9 */
-  --ink2: 190 205 222; /* tinted secondary, ~10:1 on bg */
-  --ink3: 158 178 200; /* tinted metadata, ~7:1 on bg */
-  --accent: 95 176 255; /* #5FB0FF electric blue */
-  --line: 240 244 249;
-  --line-alpha: 0.16;
-  --band-a: #0a0e15;
-  --band-b: rgba(95, 176, 255, 0.24);
-  --grain-opacity: 0.04;
-  color-scheme: dark;
+[data-theme="light"] {
+  --bg: 250 248 243; /* #FAF8F3 warm off white */
+  --ink: 38 37 35; /* #262523 near black, ~14.5:1 */
+  --ink2: 74 71 66; /* warm secondary, ~8.5:1 */
+  --ink3: 100 96 88; /* warm metadata, ~5.5:1 */
+  --accent: 10 90 180; /* deep blue for paper */
+  --line: 33 32 30;
+  --line-alpha: 0.18;
+  --band-a: #faf8f3;
+  --band-b: rgba(10, 90, 180, 0.1);
+  --grain-opacity: 0.025;
+  color-scheme: light;
 }
 
-[data-theme="light"] {
-  --bg: 255 255 255; /* #FFFFFF */
-  --ink: 11 11 11; /* #0B0B0B */
-  --ink2: 26 26 26; /* near-full ink */
-  --ink3: 51 51 51; /* still ~12:1, no grey mush */
-  --accent: 10 90 180; /* the same blue identity, deepened for white paper */
-  --line: 11 11 11;
-  --line-alpha: 0.18;
-  --band-a: #ffffff;
-  --band-b: rgba(10, 90, 180, 0.12);
-  --grain-opacity: 0.03;
-  color-scheme: light;
+[data-theme="dark"] {
+  --bg: 21 23 27; /* #15171B soft neutral dark, no blue cast */
+  --ink: 231 231 233; /* #E7E7E9 off white, ~14:1 */
+  --ink2: 178 180 186; /* neutral secondary, ~8.5:1 */
+  --ink3: 146 148 154; /* neutral metadata, ~5.8:1 */
+  --accent: 95 176 255; /* #5FB0FF electric blue */
+  --line: 231 231 233;
+  --line-alpha: 0.16;
+  --band-a: #15171b;
+  --band-b: rgba(95, 176, 255, 0.16);
+  --grain-opacity: 0.035;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -54,7 +56,7 @@
   body {
     background-color: rgb(var(--bg));
     color: rgb(var(--ink));
-    font-family: var(--font-fraunces), Georgia, serif;
+    font-family: var(--font-source-serif), Georgia, serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -97,19 +99,17 @@
     color: rgb(var(--ink));
     border: 1px solid rgb(var(--line) / 0.4);
     padding: 0.5rem 0.85rem;
-    font-family: var(--font-fragment-mono), monospace;
-    font-size: 0.85rem;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 0.9rem;
   }
   .skip-link:focus {
     transform: translateY(0);
   }
 
-  /* Mono label: nameplate, metadata, contents numbers. Full-contrast ink. */
+  /* Small caps-style label in the reading serif. */
   .label {
-    font-family: var(--font-fragment-mono), monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 0.9rem;
     color: rgb(var(--ink2));
   }
 
@@ -119,36 +119,42 @@
     border-top: 1px solid rgb(var(--line) / var(--line-alpha));
   }
 
-  /* ── The type scale. Four steps, used on every page. ─────────────────────
-     H1 (.type-h1), section heading (.type-h2), body (.reading), and the two
-     small registers: serif context label (.type-label) and mono metadata
-     (.type-meta). Nothing else defines its own heading size. */
+  /* ── The type scale. Five steps, used on every page, all in the reading
+     serif. H1 (.type-h1), section heading (.type-h2), body (.reading, 19px),
+     secondary/dek (.type-dek, 17px), small label (.type-label, ~14.5px).
+     .type-meta is the small figure register (list numbers), same size as the
+     label. Fragment Mono never appears in reading text. */
   .type-h1 {
-    font-family: var(--font-fraunces), Georgia, serif;
-    font-size: clamp(2.2rem, 1.7rem + 2.2vw, 3.1rem);
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: clamp(2rem, 1.55rem + 1.9vw, 2.75rem);
     font-weight: 600;
-    line-height: 1.07;
-    letter-spacing: -0.018em;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
     color: rgb(var(--ink));
   }
   .type-h2 {
-    font-family: var(--font-fraunces), Georgia, serif;
-    font-size: 1.35rem;
-    font-weight: 500;
-    line-height: 1.3;
-    letter-spacing: -0.005em;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.35;
     color: rgb(var(--ink));
   }
+  .type-dek {
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 1.0625rem; /* 17px */
+    line-height: 1.55;
+    color: rgb(var(--ink2));
+  }
   .type-label {
-    font-family: var(--font-fraunces), Georgia, serif;
-    font-size: 0.95rem;
-    font-style: italic;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 0.9rem; /* 14.4px, plain, never tiny mono italic */
     line-height: 1.5;
     color: rgb(var(--ink2));
   }
   .type-meta {
-    font-family: var(--font-fragment-mono), monospace;
-    font-size: 0.78rem;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 0.875rem; /* 14px */
+    font-variant-numeric: tabular-nums;
     line-height: 1.5;
     color: rgb(var(--ink3));
   }
@@ -161,11 +167,11 @@
   /* ── Reading ─────────────────────────────────────────────────────────── */
   .reading {
     counter-reset: sidenote-counter;
-    font-family: var(--font-fraunces), Georgia, serif;
-    font-size: clamp(1.1rem, 1rem + 0.55vw, 1.28rem);
-    line-height: 1.7;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 1.1875rem; /* 19px */
+    line-height: 1.6;
     color: rgb(var(--ink));
-    font-weight: 420;
+    font-weight: 400;
   }
   .reading > * + * {
     margin-top: 1.5em;
@@ -176,7 +182,7 @@
   .reading h2,
   .reading h3,
   .reading h4 {
-    font-family: var(--font-fraunces), Georgia, serif;
+    font-family: var(--font-source-serif), Georgia, serif;
     line-height: 1.15;
     letter-spacing: -0.01em;
     scroll-margin-top: 6rem;
@@ -260,8 +266,8 @@
   }
   .sidenote-number::after {
     content: counter(sidenote-counter);
-    font-family: var(--font-fragment-mono), monospace;
-    font-size: 0.62em;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 0.68em;
     vertical-align: super;
     line-height: 0;
     color: rgb(var(--accent));
@@ -272,8 +278,8 @@
     clear: right;
     margin-right: -42%;
     width: 36%;
-    font-family: var(--font-fragment-mono), monospace;
-    font-size: 0.74rem;
+    font-family: var(--font-source-serif), Georgia, serif;
+    font-size: 0.9rem;
     line-height: 1.55;
     color: rgb(var(--ink2));
     position: relative;
