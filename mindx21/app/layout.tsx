@@ -46,13 +46,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={fontVariables} suppressHydrationWarning>
       <head>
-        {/* theme-color follows the ACTIVE site theme (not the OS), so dark mode
-            never flashes white. The pre-paint script sets both together; the
-            toggle updates them together. */}
-        <meta name="theme-color" content="#0A0E15" />
+        {/* theme-color follows the ACTIVE site theme (not the OS). Light is the
+            default for reading; the pre-paint script keeps a stored choice. */}
+        <meta name="theme-color" content="#FAF8F3" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t="dark";document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="dark"?"#0A0E15":"#FFFFFF");}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t="light";document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="dark"?"#15171B":"#FAF8F3");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();`,
           }}
         />
       </head>

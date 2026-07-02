@@ -18,12 +18,14 @@ export function HeroBand() {
         <img
           src={`${BASE_PATH}/hero.jpg`}
           alt=""
-          className="h-[32vh] min-h-[200px] w-full object-cover sm:h-[46vh]"
+          className="h-[26vh] min-h-[160px] w-full object-cover sm:h-[34vh]"
         />
         <div className="band-blend absolute inset-0 opacity-30 mix-blend-multiply" />
       </div>
     );
   }
 
-  return <div className="band-blend hidden h-[34vh] min-h-[200px] w-full sm:block" aria-hidden />;
+  /* Without an image the band stays a slim strip of the blend on desktop, so
+     the page leads with content rather than an empty half screen. */
+  return <div className="band-blend hidden h-[14vh] min-h-[110px] max-h-[170px] w-full sm:block" aria-hidden />;
 }

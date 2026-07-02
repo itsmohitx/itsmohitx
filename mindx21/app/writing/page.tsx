@@ -37,10 +37,10 @@ export default function WritingIndex() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="max-w-2xl">
-                  <span className="block font-serif text-2xl leading-snug text-ink transition-colors group-hover:text-accent">
+                  <span className="block font-serif text-[1.3rem] leading-snug text-ink transition-colors group-hover:text-accent">
                     {e.title}
                   </span>
-                  <span className="mt-1.5 block font-serif text-[0.95rem] leading-relaxed text-ink2">
+                  <span className="mt-1.5 block type-dek">
                     {e.glance}
                   </span>
                   {region && (
@@ -49,7 +49,7 @@ export default function WritingIndex() {
                     </span>
                   )}
                 </span>
-                <span className="type-label not-italic sm:text-right">
+                <span className="type-label text-ink3 sm:text-right">
                   {e.readingTime} min
                 </span>
               </Link>
@@ -64,7 +64,7 @@ export default function WritingIndex() {
           {seeds.map((s) => (
             <li key={s.slug} className="border-t border-line/[.16]">
               <Link href={`/seeds/${s.slug}`} className="group block min-h-11 py-3.5">
-                <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
+                <span className="font-serif text-[1.0625rem] leading-snug text-ink transition-colors group-hover:text-accent">
                   {s.title}
                 </span>
                 <span className="mt-0.5 block type-label">
