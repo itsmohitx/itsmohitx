@@ -53,7 +53,6 @@ export default async function EssayPage({
     "@type": "Article",
     headline: essay.title,
     description: essay.glance || essay.dek,
-    datePublished: essay.date,
     author: { "@type": "Person", name: site.author, url: site.url, sameAs: [site.x.href] },
     url: `${site.url}/writing/${slug}`,
     image: `${site.url}/og/${slug}.png`,
@@ -76,7 +75,7 @@ export default async function EssayPage({
       <EssayView essay={essay} next={next} />
       {doorways.length > 0 && (
         <aside className="mx-auto mt-14 max-w-measure border-t border-line/[.16] pt-5">
-          <p className="label">Short doorways into this essay</p>
+          <p className="font-serif text-[0.95rem] italic text-ink2">Shorter ways into this essay</p>
           <ul className="mt-2">
             {doorways.map((s) => (
               <li key={s.slug}>

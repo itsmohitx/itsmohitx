@@ -35,15 +35,12 @@ export default function AboutPage() {
               width={880}
               height={1100}
             />
-            <p className="mt-3 font-mono text-[0.7rem] uppercase tracking-[0.12em] text-ink3">
-              {site.author}
-            </p>
+            <p className="mt-3 font-serif text-[0.9rem] italic text-ink2">{site.author}</p>
           </div>
         )}
 
         <article className="max-w-measure">
-          <p className="label">About</p>
-          <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+          <h1 className=" font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
             {site.author}
           </h1>
 

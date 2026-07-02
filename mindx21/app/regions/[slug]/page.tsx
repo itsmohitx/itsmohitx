@@ -49,8 +49,7 @@ export default async function RegionPage({
       />
 
       <header className="mb-12 max-w-measure">
-        <p className="label">Region</p>
-        <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight tracking-tight text-ink text-balance sm:text-5xl">
+        <h1 className=" font-serif text-4xl font-semibold leading-tight tracking-tight text-ink text-balance sm:text-5xl">
           {region.title}
         </h1>
         <p className="mt-5 font-serif text-2xl font-light leading-snug text-accent">
@@ -61,7 +60,7 @@ export default async function RegionPage({
 
       {/* Essays: title with the description left-aligned directly beneath it. */}
       <section className="mb-14">
-        <h2 className="label mb-4">Essays in this region</h2>
+        <h2 className="mb-4 font-serif text-xl text-ink">Essays in this region</h2>
         {essays.length ? (
           <ul>
             {essays.map((e) => (
@@ -84,7 +83,7 @@ export default async function RegionPage({
 
       {seeds.length > 0 && (
         <section className="mb-14">
-          <h2 className="label mb-4">Entry notes</h2>
+          <h2 className="mb-4 font-serif text-xl text-ink">Short notes here</h2>
           <ul className="grid gap-x-14 sm:grid-cols-2">
             {seeds.map((s) => (
               <li key={s.slug} className="border-t border-line/[.16]">
@@ -92,8 +91,8 @@ export default async function RegionPage({
                   <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
                     {s.title}
                   </span>
-                  <span className="mt-0.5 block font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink3">
-                    {s.readingTime} min note
+                  <span className="mt-0.5 block font-serif text-[0.85rem] italic text-ink2">
+                    a {s.readingTime} minute note
                   </span>
                 </Link>
               </li>
@@ -103,7 +102,7 @@ export default async function RegionPage({
       )}
 
       <section>
-        <h2 className="label mb-4">How this connects</h2>
+        <h2 className="mb-4 font-serif text-xl text-ink">How this connects</h2>
         <ul>
           {links.map(({ region: other, why }) => (
             <li key={other.slug} className="border-t border-line/[.16] last:border-b">

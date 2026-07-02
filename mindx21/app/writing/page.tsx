@@ -11,14 +11,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/writing" },
 };
 
-function formatDate(iso: string): string {
-  if (!iso) return "";
-  const d = new Date(iso + "T00:00:00");
-  return Number.isNaN(d.getTime())
-    ? iso
-    : d.toLocaleDateString("en-US", { year: "numeric", month: "short" });
-}
-
 export default function WritingIndex() {
   const essays = getAllEssays();
   const seeds = getAllSeeds();
@@ -26,11 +18,10 @@ export default function WritingIndex() {
 
   return (
     <div className="mx-auto max-w-wide px-5 py-10 sm:px-8">
-      <PageNav crumbs={[{ label: "Home", href: "/" }, { label: "Writing" }]} backHref="/" />
+      <PageNav crumbs={[{ label: "Home", href: "/" }, { label: "Writing" }]} />
 
       <header className="mb-10 max-w-2xl">
-        <p className="label">The writing</p>
-        <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+        <h1 className="font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           Essays
         </h1>
       </header>
@@ -55,13 +46,13 @@ export default function WritingIndex() {
                     {e.glance}
                   </span>
                   {region && (
-                    <span className="mt-1.5 block font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink3">
+                    <span className="mt-1 block font-serif text-[0.85rem] italic text-ink2">
                       {region.short}
                     </span>
                   )}
                 </span>
-                <span className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-ink3 sm:text-right">
-                  {formatDate(e.date)} · {e.readingTime} min
+                <span className="font-serif text-[0.85rem] text-ink2 sm:text-right">
+                  {e.readingTime} min
                 </span>
               </Link>
             </li>
@@ -70,16 +61,16 @@ export default function WritingIndex() {
       </ol>
 
       <section className="mt-16">
-        <p className="label">Seeds · short ways in</p>
-        <ul className="mt-5 grid gap-x-14 sm:grid-cols-2">
+        <h2 className="font-serif text-xl text-ink">Seeds, the short way in</h2>
+        <ul className="mt-4 grid gap-x-14 sm:grid-cols-2">
           {seeds.map((s) => (
             <li key={s.slug} className="border-t border-line/[.16]">
-              <Link href={`/seeds/${s.slug}`} className="group block py-3.5">
+              <Link href={`/seeds/${s.slug}`} className="group block min-h-11 py-3.5">
                 <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
                   {s.title}
                 </span>
-                <span className="mt-0.5 block font-mono text-[0.68rem] uppercase tracking-[0.12em] text-ink3">
-                  opens into {essayTitle[s.links_to] ?? "an essay"}
+                <span className="mt-0.5 block font-serif text-[0.85rem] italic text-ink2">
+                  From the essay: {essayTitle[s.links_to] ?? ""}
                 </span>
               </Link>
             </li>

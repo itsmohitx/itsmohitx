@@ -14,8 +14,7 @@ export default function RegionsIndex() {
       <PageNav crumbs={[{ label: "Home", href: "/" }, { label: "Regions" }]} />
 
       <header className="mb-10 max-w-2xl">
-        <p className="label">The territory</p>
-        <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+        <h1 className=" font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           Regions
         </h1>
         <p className="reading mt-5 text-lg">

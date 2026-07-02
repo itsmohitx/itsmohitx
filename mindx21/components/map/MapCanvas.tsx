@@ -161,7 +161,7 @@ export default function MapCanvas({ landmarks }: { landmarks: Landmark[] }) {
       })}
 
       <p className="pointer-events-none absolute bottom-3 left-0 right-0 text-center font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink3">
-        Five regions, eight essays · everything is a link
+        Every point is a link
       </p>
     </div>
   );

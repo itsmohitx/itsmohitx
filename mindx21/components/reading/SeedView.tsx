@@ -13,13 +13,13 @@ export function SeedView({ seed, pillar }: { seed: Seed; pillar: EssayMeta | nul
   return (
     <article className="mx-auto max-w-measure">
       <header className="mb-9">
-        <p className="label">
-          Seed
+        <p className="font-serif text-[0.95rem] italic text-ink2">
+          A short note
           {region && (
             <>
-              {" · "}
-              <Link href={`/regions/${region.slug}`} className="transition-colors hover:text-accent">
-                {region.short}
+              {" from "}
+              <Link href={`/regions/${region.slug}`} className="text-accent underline underline-offset-4">
+                {region.title}
               </Link>
             </>
           )}
@@ -29,8 +29,8 @@ export function SeedView({ seed, pillar }: { seed: Seed; pillar: EssayMeta | nul
         </h1>
 
         {pillar && (
-          <p className="mt-5 border-t border-line/[.16] pt-4 font-mono text-[0.74rem] uppercase tracking-[0.12em] text-ink2">
-            {seed.readingTime} min note · the full essay:{" "}
+          <p className="mt-5 border-t border-line/[.16] pt-4 font-serif text-[0.95rem] text-ink2">
+            From the essay:{" "}
             <Link href={`/writing/${pillar.slug}`} className="text-accent underline underline-offset-4">
               {pillar.title}
             </Link>
@@ -42,10 +42,10 @@ export function SeedView({ seed, pillar }: { seed: Seed; pillar: EssayMeta | nul
 
       {pillar && (
         <div className="mt-12 border-t border-line/[.16] pt-5">
-          <p className="label">Read the full essay</p>
+          <p className="font-serif text-[0.95rem] italic text-ink2">Read the full essay</p>
           <Link
             href={`/writing/${pillar.slug}`}
-            className="group mt-2 block font-serif text-xl text-ink transition-colors hover:text-accent"
+            className="group mt-1.5 block font-serif text-xl text-ink transition-colors hover:text-accent"
           >
             {pillar.title} <span aria-hidden className="text-accent">→</span>
           </Link>
