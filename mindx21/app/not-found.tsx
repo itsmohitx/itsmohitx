@@ -5,8 +5,7 @@ import { regions } from "@/content/regions";
 export default function NotFound() {
   return (
     <div className="mx-auto max-w-wide px-5 py-24 sm:px-8">
-      <p className="label">404</p>
-      <h1 className="mt-5 max-w-xl font-serif text-4xl font-semibold tracking-tight text-ink text-balance sm:text-5xl">
+      <h1 className=" max-w-xl font-serif text-4xl font-semibold tracking-tight text-ink text-balance sm:text-5xl">
         This page does not exist.
       </h1>
       <p className="reading mt-5 max-w-md text-lg">
@@ -29,7 +28,7 @@ export default function NotFound() {
       </div>
 
       <div className="mt-14 max-w-lg border-t border-line/[.16] pt-6">
-        <p className="label mb-3">Or start in a region</p>
+        <p className="mb-3 font-serif text-[1.02rem] text-ink2">Or start in a region:</p>
         <ul className="flex flex-wrap gap-x-6 gap-y-2">
           {regions.map((r) => (
             <li key={r.slug}>

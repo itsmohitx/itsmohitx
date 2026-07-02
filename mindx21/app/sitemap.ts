@@ -8,7 +8,6 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url.replace(/\/$/, "");
-  const lastModified = new Date("2026-06-26");
   const paths = [
     "",
     "/writing",
@@ -18,5 +17,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...getEssaySlugs().map((s) => `/writing/${s}`),
     ...getSeedSlugs().map((s) => `/seeds/${s}`),
   ];
-  return paths.map((p) => ({ url: `${base}${p}`, lastModified }));
+  return paths.map((p) => ({ url: `${base}${p}` }));
 }
