@@ -21,9 +21,7 @@ export default function WritingIndex() {
       <PageNav crumbs={[{ label: "Home", href: "/" }, { label: "Writing" }]} />
 
       <header className="mb-10 max-w-2xl">
-        <h1 className="font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-          Essays
-        </h1>
+        <h1 className="type-h1">Essays</h1>
       </header>
 
       <ol>
@@ -35,7 +33,7 @@ export default function WritingIndex() {
                 href={`/writing/${e.slug}`}
                 className="group grid gap-x-8 gap-y-1 py-6 sm:grid-cols-[3rem_1fr_auto] sm:items-baseline"
               >
-                <span className="font-mono text-[0.78rem] text-ink3">
+                <span className="type-meta">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <span className="max-w-2xl">
@@ -46,12 +44,12 @@ export default function WritingIndex() {
                     {e.glance}
                   </span>
                   {region && (
-                    <span className="mt-1 block font-serif text-[0.85rem] italic text-ink2">
+                    <span className="mt-1 block type-label">
                       {region.short}
                     </span>
                   )}
                 </span>
-                <span className="font-serif text-[0.85rem] text-ink2 sm:text-right">
+                <span className="type-label not-italic sm:text-right">
                   {e.readingTime} min
                 </span>
               </Link>
@@ -61,7 +59,7 @@ export default function WritingIndex() {
       </ol>
 
       <section className="mt-16">
-        <h2 className="font-serif text-xl text-ink">Seeds, the short way in</h2>
+        <h2 className="type-h2">Seeds, the short way in</h2>
         <ul className="mt-4 grid gap-x-14 sm:grid-cols-2">
           {seeds.map((s) => (
             <li key={s.slug} className="border-t border-line/[.16]">
@@ -69,7 +67,7 @@ export default function WritingIndex() {
                 <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
                   {s.title}
                 </span>
-                <span className="mt-0.5 block font-serif text-[0.85rem] italic text-ink2">
+                <span className="mt-0.5 block type-label">
                   From the essay: {essayTitle[s.links_to] ?? ""}
                 </span>
               </Link>

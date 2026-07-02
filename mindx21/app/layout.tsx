@@ -49,10 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* theme-color follows the ACTIVE site theme (not the OS), so dark mode
             never flashes white. The pre-paint script sets both together; the
             toggle updates them together. */}
-        <meta name="theme-color" content="#0B0E12" />
+        <meta name="theme-color" content="#0A0E15" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t="dark";document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="dark"?"#0B0E12":"#FFFFFF");}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t="dark";document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="dark"?"#0A0E15":"#FFFFFF");}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`,
           }}
         />
       </head>

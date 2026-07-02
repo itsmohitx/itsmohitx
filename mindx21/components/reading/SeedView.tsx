@@ -24,9 +24,7 @@ export function SeedView({ seed, pillar }: { seed: Seed; pillar: EssayMeta | nul
             </>
           )}
         </p>
-        <h1 className="mt-4 font-serif text-[1.9rem] font-semibold leading-[1.1] tracking-[-0.015em] text-ink text-balance sm:text-[2.4rem]">
-          {seed.title}
-        </h1>
+        <h1 className="type-h1 mt-4 text-balance">{seed.title}</h1>
 
         {pillar && (
           <p className="mt-5 border-t border-line/[.16] pt-4 font-serif text-[0.95rem] text-ink2">
