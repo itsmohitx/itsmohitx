@@ -27,7 +27,7 @@ export function EssayView({ essay, next }: { essay: Essay; next: EssayMeta | nul
         {/* The headline may run wider than the reading measure on desktop so a
             long title sits on one line instead of stranding its last word;
             text-wrap: pretty guards the narrower widths. */}
-        <h1 className="mt-4 font-serif text-[2.1rem] font-semibold leading-[1.08] tracking-[-0.015em] text-ink [text-wrap:pretty] sm:text-[2.9rem] lg:w-[52rem] lg:max-w-none">
+        <h1 className="type-h1 mt-4 [text-wrap:pretty] lg:w-[52rem] lg:max-w-none">
           {essay.title}
         </h1>
         {essay.dek && (
@@ -35,7 +35,7 @@ export function EssayView({ essay, next }: { essay: Essay; next: EssayMeta | nul
             {essay.dek}
           </p>
         )}
-        <p className="mt-5 font-serif text-[0.9rem] text-ink2">{essay.readingTime} minute read</p>
+        <p className="mt-5 type-label not-italic">{essay.readingTime} minute read</p>
       </header>
 
       {showToc && (

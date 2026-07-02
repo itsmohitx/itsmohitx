@@ -30,9 +30,7 @@ export default function HomePage() {
 
       {/* The statement. */}
       <section className="mx-auto max-w-wide px-5 pt-10 sm:px-8 sm:pt-14">
-        <h1 className="font-serif text-[2.4rem] font-semibold leading-[1.06] tracking-[-0.02em] sm:text-[3.8rem]">
-          {site.tagline}
-        </h1>
+        <h1 className="type-h1">{site.tagline}</h1>
         <p className="reading mt-7 max-w-[38rem] text-[1.15rem] sm:text-[1.25rem]">
           {site.description} The place to start checking my work is{" "}
           <a href={site.index.href} target="_blank" rel="noopener noreferrer">
@@ -58,9 +56,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-wide px-5 py-10 sm:px-8 sm:py-14">
           {lead && (
             <div className="max-w-3xl">
-              <p className="font-serif text-[0.95rem] italic text-ink2">The lead essay</p>
+              <p className="type-label">The lead essay</p>
               <Link href={`/writing/${lead.slug}`} className="group mt-3 block">
-                <span className="block font-serif text-[2.1rem] font-semibold leading-[1.06] tracking-[-0.015em] text-ink transition-colors group-hover:text-accent sm:text-[3.1rem]">
+                <span className="block font-serif text-[1.9rem] font-semibold leading-[1.08] tracking-[-0.015em] text-ink transition-colors group-hover:text-accent sm:text-[2.6rem]">
                   {lead.title}
                 </span>
               </Link>
@@ -85,14 +83,14 @@ export default function HomePage() {
               <li key={e.slug} className="border-b border-line/[.16]">
                 <Link href={`/writing/${e.slug}`} className="group block py-4">
                   <span className="flex items-baseline gap-4">
-                    <span className="font-mono text-[0.78rem] text-ink3">
+                    <span className="type-meta">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="font-serif text-[1.25rem] leading-snug text-ink transition-colors group-hover:text-accent">
                       {e.title}
                     </span>
                   </span>
-                  <span className="mt-1 block pl-9 font-serif text-[0.9rem] leading-relaxed text-ink2">
+                  <span className="mt-1 block pl-9 font-serif text-[0.95rem] leading-relaxed text-ink2">
                     {e.glance}
                   </span>
                 </Link>
@@ -101,7 +99,7 @@ export default function HomePage() {
             {rest.slice(2).map((e, i) => (
               <li key={e.slug} className="border-b border-line/[.16]">
                 <Link href={`/writing/${e.slug}`} className="group flex min-h-11 items-baseline gap-4 py-2.5">
-                  <span className="font-mono text-[0.78rem] text-ink3">
+                  <span className="type-meta">
                     {String(i + 3).padStart(2, "0")}
                   </span>
                   <span className="font-serif text-[1.02rem] leading-snug text-ink transition-colors group-hover:text-accent">
@@ -117,7 +115,7 @@ export default function HomePage() {
       {/* Regions: full-width rows. The map lives at /regions. */}
       <section className="mt-2 sm:mt-4">
         <div className="mx-auto flex max-w-wide items-baseline justify-between px-5 sm:px-8">
-          <h2 className="font-serif text-xl text-ink">The territory</h2>
+          <h2 className="type-h2">The territory</h2>
           <Link
             href="/regions"
             className="font-serif text-[0.95rem] text-accent underline underline-offset-4"
@@ -146,7 +144,7 @@ export default function HomePage() {
 
       {/* Seeds: short entry notes. */}
       <section className="mx-auto mt-16 max-w-wide px-5 pb-4 sm:mt-20 sm:px-8">
-        <h2 className="font-serif text-xl text-ink">Seeds, the short way in</h2>
+        <h2 className="type-h2">Seeds, the short way in</h2>
         <ul className="mt-4 grid gap-x-14 sm:grid-cols-2">
           {seeds.map((s) => (
             <li key={s.slug} className="border-t border-line/[.16]">
@@ -154,7 +152,7 @@ export default function HomePage() {
                 <span className="font-serif text-[1.05rem] leading-snug text-ink transition-colors group-hover:text-accent">
                   {s.title}
                 </span>
-                <span className="mt-0.5 block font-serif text-[0.85rem] italic text-ink2">
+                <span className="mt-0.5 block type-label">
                   From the essay: {essayTitle[s.links_to] ?? ""}
                 </span>
               </Link>

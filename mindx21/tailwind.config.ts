@@ -29,6 +29,7 @@ const config: Config = {
         mono: ["var(--font-fragment-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
+        /* ~62-68 characters of Fraunces body text: the one reading measure. */
         measure: "40rem",
         wide: "76rem",
       },

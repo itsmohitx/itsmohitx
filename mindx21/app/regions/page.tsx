@@ -14,9 +14,7 @@ export default function RegionsIndex() {
       <PageNav crumbs={[{ label: "Home", href: "/" }, { label: "Regions" }]} />
 
       <header className="mb-10 max-w-2xl">
-        <h1 className=" font-serif text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-          Regions
-        </h1>
+        <h1 className="type-h1">Regions</h1>
         <p className="reading mt-5 text-lg">
           Five regions of one worldview, with every essay placed on the map as a landmark.
           The edges carry the argument: name where two regions touch and you usually find

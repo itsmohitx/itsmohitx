@@ -13,16 +13,16 @@
 */
 :root,
 [data-theme="dark"] {
-  --bg: 11 14 18; /* #0B0E12 */
-  --ink: 238 242 246; /* #EEF2F6 */
-  --ink2: 187 202 218; /* tinted secondary, ~10:1 on bg */
-  --ink3: 156 175 196; /* tinted metadata, ~7:1 on bg */
+  --bg: 10 14 21; /* #0A0E15, a clean deep blue-black rather than a muddy near black */
+  --ink: 240 244 249; /* #F0F4F9 */
+  --ink2: 190 205 222; /* tinted secondary, ~10:1 on bg */
+  --ink3: 158 178 200; /* tinted metadata, ~7:1 on bg */
   --accent: 95 176 255; /* #5FB0FF electric blue */
-  --line: 238 242 246;
+  --line: 240 244 249;
   --line-alpha: 0.16;
-  --band-a: #0b0e12;
-  --band-b: rgba(95, 176, 255, 0.34);
-  --grain-opacity: 0.05;
+  --band-a: #0a0e15;
+  --band-b: rgba(95, 176, 255, 0.24);
+  --grain-opacity: 0.04;
   color-scheme: dark;
 }
 
@@ -35,8 +35,8 @@
   --line: 11 11 11;
   --line-alpha: 0.18;
   --band-a: #ffffff;
-  --band-b: rgba(10, 90, 180, 0.16);
-  --grain-opacity: 0.035;
+  --band-b: rgba(10, 90, 180, 0.12);
+  --grain-opacity: 0.03;
   color-scheme: light;
 }
 
@@ -119,6 +119,40 @@
     border-top: 1px solid rgb(var(--line) / var(--line-alpha));
   }
 
+  /* ── The type scale. Four steps, used on every page. ─────────────────────
+     H1 (.type-h1), section heading (.type-h2), body (.reading), and the two
+     small registers: serif context label (.type-label) and mono metadata
+     (.type-meta). Nothing else defines its own heading size. */
+  .type-h1 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-size: clamp(2.2rem, 1.7rem + 2.2vw, 3.1rem);
+    font-weight: 600;
+    line-height: 1.07;
+    letter-spacing: -0.018em;
+    color: rgb(var(--ink));
+  }
+  .type-h2 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    color: rgb(var(--ink));
+  }
+  .type-label {
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: rgb(var(--ink2));
+  }
+  .type-meta {
+    font-family: var(--font-fragment-mono), monospace;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: rgb(var(--ink3));
+  }
+
   /* The ONLY gradient on the site: the header/hero band two-color blend. */
   .band-blend {
     background-image: linear-gradient(115deg, var(--band-a) 0%, var(--band-a) 42%, var(--band-b) 100%);
@@ -128,7 +162,7 @@
   .reading {
     counter-reset: sidenote-counter;
     font-family: var(--font-fraunces), Georgia, serif;
-    font-size: clamp(1.075rem, 0.95rem + 0.6vw, 1.22rem);
+    font-size: clamp(1.1rem, 1rem + 0.55vw, 1.28rem);
     line-height: 1.7;
     color: rgb(var(--ink));
     font-weight: 420;
@@ -254,7 +288,7 @@
   .sidenote-input {
     display: none;
   }
-  @media (max-width: 1180px) {
+  @media (max-width: 1240px) {
     .sidenote {
       display: none;
       float: none;

@@ -5,9 +5,7 @@ import { regions } from "@/content/regions";
 export default function NotFound() {
   return (
     <div className="mx-auto max-w-wide px-5 py-24 sm:px-8">
-      <h1 className=" max-w-xl font-serif text-4xl font-semibold tracking-tight text-ink text-balance sm:text-5xl">
-        This page does not exist.
-      </h1>
+      <h1 className="type-h1 max-w-xl text-balance">This page does not exist.</h1>
       <p className="reading mt-5 max-w-md text-lg">
         The link may be old. Everything on the site is one click from here.
       </p>
