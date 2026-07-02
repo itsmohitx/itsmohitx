@@ -1,9 +1,11 @@
 name: Deploy sites to GitHub Pages
 
-# Builds TWO static exports into one Pages artifact:
-#   the-mind/  -> site root      (the original, unchanged, stays live as-is)
-#   mindx/     -> /v2 subpath    (the new MohitX evolution, preview)
-# One-time setup (already done): Settings, Pages, Source -> GitHub Actions.
+# Builds THREE static exports into one Pages artifact:
+#   the-mind/  -> site root   (the original, unchanged)
+#   mindx/     -> /v2         (the v2 snapshot, source frozen, tag v2-snapshot)
+#   mindx21/   -> /v2-1       (the v2.1 cleanup pass)
+# The root 404.html gets a small injected script so misses under /v2 and /v2-1
+# land on THEIR OWN 404 pages instead of leaking the old design.
 
 on:
   push:
@@ -11,6 +13,7 @@ on:
     paths:
       - "the-mind/**"
       - "mindx/**"
+      - "mindx21/**"
       - ".github/workflows/deploy-the-mind.yml"
   workflow_dispatch:
 
@@ -48,7 +51,7 @@ jobs:
           npm ci
           npm run build
 
-      - name: Build MohitX (v2 preview)
+      - name: Build v2 snapshot
         working-directory: mindx
         env:
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}/v2
@@ -57,13 +60,25 @@ jobs:
           npm install
           npm run build
 
-      - name: Merge artifacts
+      - name: Build v2.1
+        working-directory: mindx21
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}/v2-1
+          NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}/v2-1
+        run: |
+          npm install
+          npm run build
+
+      - name: Merge artifacts and route sub-site 404s
         run: |
           mkdir -p _site
           cp -r the-mind/out/. _site/
-          mkdir -p _site/v2
+          mkdir -p _site/v2 _site/v2-1
           cp -r mindx/out/. _site/v2/
+          cp -r mindx21/out/. _site/v2-1/
           touch _site/.nojekyll
+          # Pages serves ONE root 404.html; send /v2-1 and /v2 misses to their own 404s.
+          sed -i 's#</head>#<script>(function(){var p=location.pathname;var m=p.match(/^(.*?\/(?:v2-1|v2))(\/|$)/);if(m){var b=m[1];location.replace(b+(b.slice(-4)==="v2-1"?"/404":"/404.html")+location.search);}})();</script></head>#' _site/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

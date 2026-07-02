@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  MohitX tokens. One set, two themes, dark default.
+  DARK  "Cool Blackout": #0B0E12 / #EEF2F6 / electric blue #5FB0FF
+  LIGHT "Stark Print":   #FFFFFF / #0B0B0B / red #D8281C
+  Rules of the house: no boxes or rounded containers, hairline rules and
+  full-bleed bands instead; secondary text stays high contrast (tinted ink,
+  never neutral grey); the header band is the only gradient on the site;
+  no em dashes in any copy.
+*/
+:root,
+[data-theme="dark"] {
+  --bg: 11 14 18; /* #0B0E12 */
+  --ink: 238 242 246; /* #EEF2F6 */
+  --ink2: 187 202 218; /* tinted secondary, ~10:1 on bg */
+  --ink3: 156 175 196; /* tinted metadata, ~7:1 on bg */
+  --accent: 95 176 255; /* #5FB0FF electric blue */
+  --line: 238 242 246;
+  --line-alpha: 0.16;
+  --band-a: #0b0e12;
+  --band-b: rgba(95, 176, 255, 0.34);
+  --grain-opacity: 0.05;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: 255 255 255; /* #FFFFFF */
+  --ink: 11 11 11; /* #0B0B0B */
+  --ink2: 26 26 26; /* near-full ink */
+  --ink3: 51 51 51; /* still ~12:1, no grey mush */
+  --accent: 10 90 180; /* the same blue identity, deepened for white paper */
+  --line: 11 11 11;
+  --line-alpha: 0.18;
+  --band-a: #ffffff;
+  --band-b: rgba(10, 90, 180, 0.16);
+  --grain-opacity: 0.035;
+  color-scheme: light;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--line) / var(--line-alpha));
+    border-radius: 0 !important; /* the no-box rule, enforced globally */
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--ink));
+    font-family: var(--font-fraunces), Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: rgb(var(--accent) / 0.3);
+    color: rgb(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 100;
+    transform: translateY(-160%);
+    transition: transform 0.18s ease;
+    background: rgb(var(--bg));
+    color: rgb(var(--ink));
+    border: 1px solid rgb(var(--line) / 0.4);
+    padding: 0.5rem 0.85rem;
+    font-family: var(--font-fragment-mono), monospace;
+    font-size: 0.85rem;
+  }
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
+  /* Mono label: nameplate, metadata, contents numbers. Full-contrast ink. */
+  .label {
+    font-family: var(--font-fragment-mono), monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(var(--ink2));
+  }
+
+  /* Hairline rule, the house divider. Full width, never a box. */
+  .rule {
+    border: 0;
+    border-top: 1px solid rgb(var(--line) / var(--line-alpha));
+  }
+
+  /* The ONLY gradient on the site: the header/hero band two-color blend. */
+  .band-blend {
+    background-image: linear-gradient(115deg, var(--band-a) 0%, var(--band-a) 42%, var(--band-b) 100%);
+  }
+
+  /* ── Reading ─────────────────────────────────────────────────────────── */
+  .reading {
+    counter-reset: sidenote-counter;
+    font-family: var(--font-fraunces), Georgia, serif;
+    font-size: clamp(1.075rem, 0.95rem + 0.6vw, 1.22rem);
+    line-height: 1.7;
+    color: rgb(var(--ink));
+    font-weight: 420;
+  }
+  .reading > * + * {
+    margin-top: 1.5em;
+  }
+  .reading p {
+    text-wrap: pretty;
+  }
+  .reading h2,
+  .reading h3,
+  .reading h4 {
+    font-family: var(--font-fraunces), Georgia, serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 6rem;
+  }
+  .reading h2 {
+    font-size: 1.65em;
+    font-weight: 600;
+    margin-top: 2.1em;
+  }
+  .reading h3 {
+    font-size: 1.28em;
+    font-weight: 600;
+    margin-top: 1.8em;
+  }
+  .reading h2 + *,
+  .reading h3 + * {
+    margin-top: 0.7em;
+  }
+  .reading a:not(.trail-link) {
+    color: rgb(var(--accent));
+    text-decoration: underline;
+    text-decoration-color: rgb(var(--accent) / 0.5);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease;
+  }
+  .reading a:not(.trail-link):hover {
+    text-decoration-color: rgb(var(--accent));
+  }
+  .reading strong {
+    font-weight: 650;
+  }
+  .reading blockquote {
+    border-left: 2px solid rgb(var(--accent) / 0.6);
+    padding-left: 1.25rem;
+    margin-left: 0;
+    font-style: italic;
+  }
+  .reading ul,
+  .reading ol {
+    padding-left: 1.4rem;
+  }
+  .reading li + li {
+    margin-top: 0.5em;
+  }
+  .reading ul > li {
+    list-style: none;
+    position: relative;
+  }
+  .reading ul > li::before {
+    content: "·";
+    position: absolute;
+    left: -1.4rem;
+    color: rgb(var(--accent));
+  }
+  .reading ol {
+    list-style: decimal;
+  }
+  .reading hr {
+    border: 0;
+    height: 1px;
+    background: rgb(var(--line) / 0.25);
+    margin: 2.6em auto;
+    width: 40%;
+  }
+  .reading code {
+    font-family: var(--font-fragment-mono), monospace;
+    font-size: 0.85em;
+    background: rgb(var(--ink) / 0.07);
+    padding: 0.12em 0.38em;
+  }
+  .reading .lede {
+    font-size: 1.18em;
+    line-height: 1.58;
+  }
+
+  /* ── Tufte sidenotes (pure CSS) ──────────────────────────────────────── */
+  .sidenote-number {
+    counter-increment: sidenote-counter;
+    cursor: pointer;
+    position: relative;
+  }
+  .sidenote-number::after {
+    content: counter(sidenote-counter);
+    font-family: var(--font-fragment-mono), monospace;
+    font-size: 0.62em;
+    vertical-align: super;
+    line-height: 0;
+    color: rgb(var(--accent));
+    margin-left: 1px;
+  }
+  .sidenote {
+    float: right;
+    clear: right;
+    margin-right: -42%;
+    width: 36%;
+    font-family: var(--font-fragment-mono), monospace;
+    font-size: 0.74rem;
+    line-height: 1.55;
+    color: rgb(var(--ink2));
+    position: relative;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    text-align: left;
+  }
+  .sidenote::before {
+    content: counter(sidenote-counter) " ";
+    color: rgb(var(--accent));
+  }
+  .sidenote-input {
+    display: none;
+  }
+  @media (max-width: 1180px) {
+    .sidenote {
+      display: none;
+      float: none;
+      width: auto;
+      margin: 1rem 0;
+      padding: 0.85rem 0 0.85rem 1rem;
+      border-left: 2px solid rgb(var(--accent) / 0.6);
+    }
+    .sidenote-input:checked ~ .sidenote {
+      display: block;
+    }
+    .sidenote-number::after {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  /* Cross-essay links read as ordinary links. */
+  .trail-link {
+    color: rgb(var(--accent));
+    text-decoration: underline;
+    text-decoration-color: rgb(var(--accent) / 0.5);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease;
+  }
+  .trail-link:hover {
+    text-decoration-color: rgb(var(--accent));
+  }
+
+  /* Map: a slow CSS drift, disabled by the global reduced-motion rule. */
+  .map-drift {
+    animation-name: map-drift;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  @keyframes map-drift {
+    0%, 100% {
+      margin-top: 0;
+      margin-left: 0;
+    }
+    50% {
+      margin-top: -6px;
+      margin-left: 4px;
+    }
+  }
+}
+
+/* Static grain, a printed texture. Never animated. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
