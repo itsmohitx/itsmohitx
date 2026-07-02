@@ -25,7 +25,7 @@ export function HeroBand() {
     );
   }
 
-  /* Without an image the band stays a slim strip of the blend on desktop, so
-     the page leads with content rather than an empty half screen. */
-  return <div className="band-blend hidden h-[14vh] min-h-[110px] max-h-[170px] w-full sm:block" aria-hidden />;
+  /* No image, no band. A decorative strip above the content reads as filler;
+     the page opens with the masthead rule and the statement. */
+  return null;
 }
