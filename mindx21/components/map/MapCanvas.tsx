@@ -104,14 +104,14 @@ export default function MapCanvas({ landmarks }: { landmarks: Landmark[] }) {
                 aria-hidden
                 className="block bg-accent"
                 style={{
-                  width: `${r.size * 0.85}rem`,
-                  height: `${r.size * 0.85}rem`,
+                  width: `${r.size * 1.3}rem`,
+                  height: `${r.size * 1.3}rem`,
                   boxShadow: active
                     ? "0 0 0 2px rgb(var(--bg)), 0 0 0 4px rgb(var(--accent))"
-                    : "0 0 24px -4px rgb(var(--accent) / 0.7)",
+                    : "0 0 28px -4px rgb(var(--accent) / 0.8)",
                 }}
               />
-              <span className="pointer-events-none mt-2.5 whitespace-nowrap text-center font-mono text-[0.72rem] uppercase tracking-[0.1em] text-ink">
+              <span className="pointer-events-none mt-3 whitespace-nowrap text-center font-mono text-[0.84rem] uppercase tracking-[0.14em] text-ink">
                 {r.short}
               </span>
             </Link>
@@ -150,9 +150,9 @@ export default function MapCanvas({ landmarks }: { landmarks: Landmark[] }) {
             >
               <span
                 aria-hidden
-                className="block h-[0.45rem] w-[0.45rem] border border-line/60 bg-bg transition-colors group-hover:bg-accent"
+                className="block h-[0.35rem] w-[0.35rem] border border-line/50 bg-bg transition-colors group-hover:bg-accent"
               />
-              <span className="pointer-events-none mt-1.5 max-w-[11rem] text-center font-serif text-[0.8rem] leading-tight text-ink2 transition-colors group-hover:text-accent">
+              <span className="pointer-events-none mt-1 max-w-[9.5rem] text-center font-serif text-[0.72rem] italic leading-tight text-ink2 transition-colors group-hover:text-accent">
                 {l.title}
               </span>
             </Link>

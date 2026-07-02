@@ -4,8 +4,8 @@ name: Deploy sites to GitHub Pages
 #   the-mind/  -> site root   (the original, unchanged)
 #   mindx/     -> /v2         (the v2 snapshot, source frozen, tag v2-snapshot)
 #   mindx21/   -> /v2-1       (the v2.1 cleanup pass)
-# The root 404.html gets a small injected script so misses under /v2 and /v2-1
-# land on THEIR OWN 404 pages instead of leaking the old design.
+# The whole domain shares one root 404.html on Pages; it is replaced with the
+# v2.1 404 page so no miss anywhere can leak the old design.
 
 on:
   push:
@@ -76,9 +76,11 @@ jobs:
           mkdir -p _site/v2 _site/v2-1
           cp -r mindx/out/. _site/v2/
           cp -r mindx21/out/. _site/v2-1/
+          # Pages serves ONE root 404.html for the whole domain. Use the v2.1
+          # 404 for every miss; its asset and link URLs are absolute, so it
+          # renders correctly from any path.
+          cp mindx21/out/404.html _site/404.html
           touch _site/.nojekyll
-          # Pages serves ONE root 404.html; send /v2-1 and /v2 misses to their own 404s.
-          sed -i 's#</head>#<script>(function(){var p=location.pathname;var m=p.match(/^(.*?\/(?:v2-1|v2))(\/|$)/);if(m){var b=m[1];location.replace(b+(b.slice(-4)==="v2-1"?"/404":"/404.html")+location.search);}})();</script></head>#' _site/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
